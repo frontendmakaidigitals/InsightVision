@@ -6,6 +6,12 @@ import {
   LinkedinLogo,
 } from "@phosphor-icons/react";
 const HomeForm = () => {
+  const icons = [
+    { id: "facebook", Icon: FacebookLogo },
+    { id: "instagram", Icon: InstagramLogo },
+    { id: "linkedin", Icon: LinkedinLogo },
+  ];
+
   return (
     <div className="bg-white py-20">
       <div className="container h-full gap-5 grid grid-cols-[.8fr_1.2fr]">
@@ -29,23 +35,21 @@ const HomeForm = () => {
             <h3 className="text-purple-100  font-Plus-Jakarta-Sans font-[600] text-xl">
               Open Time
             </h3>
-            <p className="mt-2 text-lg">Monday - Friday &nbsp; &nbsp; 10:00 - 19:00</p>
+            <p className="mt-2 text-lg">
+              Monday - Friday &nbsp; &nbsp; 10:00 - 19:00
+            </p>
           </div>
           <div>
             <h3 className="text-purple-100 font-Plus-Jakarta-Sans font-[600] text-xl">
               Stay Connnected
             </h3>
             <div className="flex gap-8 mt-2 justify-between w-full">
-              {[
-                <FacebookLogo weight="fill" />,
-                <InstagramLogo weight="fill" />,
-                <LinkedinLogo weight="fill" />,
-              ].map((icon, idx) => (
+              {icons.map(({ id, Icon }) => (
                 <div
-                  key={idx}
-                  className="text-4xl size-12 bg-indigo-500 flex justify-center items-center  rounded-full"
+                  key={id}
+                  className="text-4xl size-12 bg-indigo-500 flex justify-center items-center rounded-full"
                 >
-                  {icon}
+                  <Icon weight="fill" />
                 </div>
               ))}
             </div>

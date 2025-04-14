@@ -13,7 +13,7 @@ const CTA = () => {
         />
         <div className="relative z-20">
           <h2 className="text-center text-slate-50 text-3xl lg:text-5xl font-Plus-Jakarta-Sans font-[200]">
-            Let's Explore with us
+            Let&apos;s Explore with us
           </h2>
           <p className="text-center text-slate-100 mt-3 text-lg">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
