@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import Carousel, { Slider, SliderContainer, SliderProgress } from "./Carousal";
-import Image from "next/image";
+
 
 const Industries = () => {
   const OPTIONS: EmblaOptionsType = { loop: false };

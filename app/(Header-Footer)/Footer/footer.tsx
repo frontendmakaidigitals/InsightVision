@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Logo from "@/app/App_Chunks/Logo";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   FacebookLogo,
   InstagramLogo,
@@ -39,8 +39,6 @@ const Footer = () => {
     },
   ];
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-
   const path = usePathname();
   const renderPath = "/admin";
 
