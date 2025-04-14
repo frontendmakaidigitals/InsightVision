@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <div className=" py-2">
       <div className="container justify-between flex items-center">
-        <Logo src={"logo/logo.png"} />
+        <Logo src={"Logo/Logo.png"} />
         <Menu links={links} />
         <div className="relative inline-block group">
           {/* Glow Layer */}
