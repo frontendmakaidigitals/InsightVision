@@ -70,7 +70,7 @@ const ReviewCard = ({ img }: { img: string }) => {
 
 export function MarqueeLogo() {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border">
+    <div className="relative flex py-16 w-full flex-col items-center justify-center overflow-hidden rounded-lg">
       <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((review, index) => (
           <ReviewCard key={index} {...review} />
@@ -81,8 +81,8 @@ export function MarqueeLogo() {
           <ReviewCard key={index} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#f2f4fe] "></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#f2f4fe] "></div>
     </div>
   );
 }

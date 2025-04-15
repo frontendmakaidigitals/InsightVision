@@ -46,38 +46,27 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
 
 @utility container {
-  padding-inline: 10px;
+  padding-inline: 2rem;
   margin-inline: auto;
-
-  @variant sm {
-    padding-inline: 20px;
-  }
-
-  @variant lg {
-    padding-inline: 80px;
-  }
-
-  @variant xl {
-    padding-inline: 120px;
-  }
+  max-width: 1360px;
 }
 
 body {

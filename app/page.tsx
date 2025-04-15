@@ -17,8 +17,8 @@ const Page = () => {
       <Industries />
       <Techstack />
       <HomeForm />
-      <MarqueeLogo />
       <Experience />
+      <MarqueeLogo />
       <AccordionDemo />
     </>
   );

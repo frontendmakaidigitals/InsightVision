@@ -80,41 +80,40 @@ const Service2 = () => {
     },
   ];
   const [showall, setShowAll] = useState(false);
-  const visibleServices = showall ? services : services.slice(0, 6);
+  const visibleServices = showall ? services : services.slice(0, 8);
   return (
-    <div className="py-14">
+    <div className="py-14 bg-gradient-to-b from-purple-100/80 from-[10%] to-transparent">
       <div className="container">
-        <div className="flex justify-between items-center">
-          <div className="flex-1 max-w-3xl">
-            <h1 className="text-3xl mb-2 lg:text-6xl font-Plus-Jakarta-Sans font-[600]">Our Services</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium, commodi incidunt officia laboriosam aperiam quaerat
-              cupiditate facilis esse consequatur pariatur ab reprehenderit sint
-              corporis{" "}
-            </p>
-          </div>
-          <button className="mt-8 bg-[#5c4d7d] group-hover:bg-[#d1c4e9] group-hover:text-[#5c4d7d] px-7 py-2  rounded-full text-[#e0d7ee]">
+        <div className=" ">
+          <h1 className="text-3xl mb-2 lg:text-6xl font-Plus-Jakarta-Sans font-[600]">
+            Our Services
+          </h1>
+          <button className="mt-6 bg-[#5c4d7d]  px-7 py-2  rounded-full text-[#e0d7ee]">
             Contact us
           </button>
         </div>
-        <div className="grid mt-14 xl:grid-cols-3 2xl:grid-cols-4 gap-7">
+        <div className="grid mt-14 xl:grid-cols-4 gap-7">
           {visibleServices.map((service, idx) => (
             <div
               key={idx}
-              className="p-9 flex flex-col items-start justify-between group bg-[#d8d0e2] hover:bg-[#2d2243] transition-all duration-300 rounded-2xl"
+              className="p-9 flex flex-col items-start justify-between group bg-white transition-all duration-300 rounded-3xl"
             >
               <div>
-                <img className="size-28 group-hover:invert" src={service.img} />
-                <h3 className="text-xl font-Plus-Jakarta-Sans font-[500] lg:text-3xl mt-6 text-[#5c4d7d] group-hover:text-[#e0d7ee]">
+                <div className="size-16 p-3 rounded-full bg-[#f8f4fb]">
+                  <img
+                    className="w-full h-full object-contain"
+                    src={service.img}
+                  />
+                </div>
+                <h3 className="text-xl font-Plus-Jakarta-Sans font-[500] lg:text-2xl mt-6 text-black ">
                   {service.name}
                 </h3>
-                <p className="mt-4 text-[#5c4d7d] group-hover:text-[#e0d7ee]">
+                <p className="mt-4 text-slate-800">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Animi hic ducimus deleniti. Quas incidunt ducimus laboriosam,
                 </p>
               </div>
-              <button className="mt-8  bg-[#5c4d7d] group-hover:bg-[#d1c4e9] group-hover:text-[#5c4d7d] px-6 py-2  rounded-full text-[#e0d7ee]">
+              <button className="mt-8 underline underline-offset-4 decoration-2 decoration-purple-800 font-bold rounded-full text-[#11002e]">
                 Learn more{" "}
                 <ArrowUpRight className="ml-1 text-lg inline-block" />
               </button>
