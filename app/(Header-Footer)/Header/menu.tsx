@@ -169,7 +169,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       <AnimatePresence mode="wait">
         {links.map((link, idx) =>
           link.name.toLowerCase() === "services" ? (
-            <div className="relative">
+            <div className="relative font-Plus-Jakarta-Sans font-[500]">
               <motion.div
                 variants={containerVariants}
                 initial="initial"
@@ -276,12 +276,13 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                           ))}
                         </div>
                         <div
-                          className={`w-full overflow-hidden  bg-indigo-300 rounded-xl h-[400px]`}
+                          className={`w-full relative overflow-hidden  bg-indigo-300 rounded-xl h-[400px]`}
                         >
+                          <button className="absolute text-slate-50 bg-Palette-30 cursor-pointer px-4 py-2 rounded-xl bottom-2 left-1/2 -translate-x-1/2">
+                            Contact us
+                          </button>
                           <img
-                            src={
-                              "https://images.unsplash.com/photo-1579546928937-641f7ac9bced?q=80&w=3039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            }
+                            src={"Navbar.png"}
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -299,7 +300,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
               key={idx}
               onMouseEnter={() => setHoverIdx(idx)}
               onMouseLeave={() => setHoverIdx(null)}
-              className={`pb-1 overflow-hidden text-lg relative `}
+              className={`pb-1 font-Plus-Jakarta-Sans font-[500] overflow-hidden text-lg relative `}
             >
               <Link href={link.link}>
                 <AnimatePresence>
