@@ -14,7 +14,9 @@ const Header = () => {
   return (
     <div className=" py-2">
       <div className="container justify-between flex items-center">
-        <Logo src={"Logo/Logo.png"} />
+        <div className="w-32 ">
+          <Logo src={"Logo/Logo.png"} />
+        </div>
         <Menu links={links} />
         <div className="relative inline-block group">
           {/* Glow Layer */}
@@ -26,12 +28,14 @@ const Header = () => {
           />
 
           {/* Button Layer */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="relative z-10 rounded-lg bg-black px-7 py-3 cursor-pointer text-slate-300 font-Plus-Jakarta-Sans font-semibold shadow-md"
-          >
-            Lets talk
-          </motion.button>
+          <div className="w-32">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className="relative z-10 rounded-lg bg-black px-7 py-3 cursor-pointer text-slate-300 font-Plus-Jakarta-Sans font-semibold shadow-md"
+            >
+              Lets talk
+            </motion.button>
+          </div>
         </div>
       </div>
     </div>
