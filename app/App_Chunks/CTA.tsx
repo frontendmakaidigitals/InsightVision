@@ -2,8 +2,8 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <div className="mb-16">
-      <div className="container relative py-14">
+    <div className="mb-16 mt-16">
+      <div className="container py-14 relative  rounded-2xl ">
         <div className="absolute top-0 left-0 w-full h-full z-10 bg-indigo-950/20" />
         <img
           className="w-full object-cover object-center  absolute top-0 left-0 h-full"
@@ -12,7 +12,7 @@ const CTA = () => {
           }
         />
         <div className="relative z-20">
-          <h2 className="text-center text-slate-50 text-3xl lg:text-5xl font-Plus-Jakarta-Sans font-[200]">
+          <h2 className="text-center text-slate-50 text-3xl lg:text-5xl font-Plus-Jakarta-Sans font-[300]">
             Let&apos;s Explore with us
           </h2>
           <p className="text-center text-slate-100 mt-3 text-lg">
@@ -20,7 +20,7 @@ const CTA = () => {
             animi, illum, voluptatem magni reprehenderit{" "}
           </p>
           <div className="flex justify-center items-center">
-            <button className="mt-5 px-6 py-2 rounded-full bg-indigo-500 text-indigo-50">
+            <button className="mt-5 px-6 py-2 font-[600] hover:scale-[1.1] transition-all duration-200 cursor-pointerF font-Plus-Jakarta-Sans rounded-full bg-slate-100/40  backdrop-filter backdrop-blur-md text-indigo-50">
               Contact us
             </button>
           </div>

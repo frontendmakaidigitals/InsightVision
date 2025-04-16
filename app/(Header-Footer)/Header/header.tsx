@@ -28,7 +28,7 @@ const Header = () => {
           {/* Button Layer */}
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="relative z-10 rounded-lg bg-slate-100 px-6 py-2 text-black font-semibold shadow-md"
+            className="relative z-10 rounded-lg bg-black px-7 py-3 cursor-pointer text-slate-300 font-Plus-Jakarta-Sans font-semibold shadow-md"
           >
             Lets talk
           </motion.button>

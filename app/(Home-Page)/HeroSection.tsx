@@ -20,10 +20,10 @@ const HeroSection = () => {
   return (
     <div className="h-[85vh] flex flex-col justify-start items-center">
       <div className="relative container grid grid-cols-2 h-full">
-        <motion.div
+        {/* <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.25, ease: [0, 0, 0.5, 1] }}
-          className="absolute group overflow-hidden rounded-xl bottom-10 right-0 aspect-video max-w-sm origin-bottom-right"
+          className="absolute group overflow-hidden rounded-xl bottom-0 right-0 aspect-video max-w-sm origin-bottom-right"
         >
           {" "}
           <video
@@ -42,9 +42,9 @@ const HeroSection = () => {
           >
             {isPlaying ? <Pause /> : <Play />}
           </button>
-        </motion.div>
+        </motion.div> */}
         <div className="w-full flex flex-col items-start justify-center h-full">
-          <h1 className="xl:text-7xl leading-[1.2] font-Plus-Jakarta-Sans font-[600] text-black">
+          <h1 className="xl:text-7xl leading-[1.2] font-Plus-Jakarta-Sans font-[700] text-slate-800">
             Simple and Powerful Social Media Analytics
           </h1>
           <p className="mt-4">
@@ -52,11 +52,28 @@ const HeroSection = () => {
             numquam maiores molestias expedita quaerat soluta. Nulla doloremque
             iusto assumenda
           </p>
-          <button className="px-6 mt-4 rounded-full py-3 bg-blue-500 text-slate-50 rounded-ful">
+          <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-indigo-800 hover:bg-indigo-950 text-slate-50">
             Get Started
           </button>
         </div>
-        <div className="w-full"></div>
+        <div className="w-full relative">
+          <div className="absolute grid grid-cols-1 gap-4 right-0 top-7">
+            <img src={"Hero/budget.svg"} className=" w-[190px]" />
+            <img
+              src={"Hero/Generates traffic & leads.svg"}
+              className=" w-[190px]"
+            />
+            <div
+              style={{ right: `calc(100% + 1rem)` }}
+              className={`w-[270px] absolute top-1/2 -translate-y-1/2 `}
+            >
+              <img
+                src={"Hero/facebook marketing campaign.svg"}
+                className=" w-full"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

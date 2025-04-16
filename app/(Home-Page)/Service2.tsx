@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 const Service2 = () => {
   const services = [
     {
@@ -82,21 +83,24 @@ const Service2 = () => {
   const [showall, setShowAll] = useState(false);
   const visibleServices = showall ? services : services.slice(0, 8);
   return (
-    <div className="py-14 bg-gradient-to-b from-purple-100/80 from-[10%] to-transparent">
+    <div className="py-20 bg-gradient-to-b from-Palette-20/8 from-[10%] to-transparent">
       <div className="container">
         <div className=" ">
-          <h1 className="text-3xl mb-2 lg:text-6xl font-Plus-Jakarta-Sans font-[600]">
-            Our Services
+          <p className="text-violet-400 font-Plus-Jakarta-Sans font-[600]">
+            Our Capabilities
+          </p>
+          <h1 className="text-3xl mt-2 mb-2 lg:text-6xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
+            Data-Driven, Expert Digital Marketing Solutions
           </h1>
-          <button className="mt-6 bg-[#5c4d7d]  px-7 py-2  rounded-full text-[#e0d7ee]">
-            Contact us
+          <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-black hover:bg-slate-800 text-slate-50">
+            Contact us <ArrowRight className="inline-block size-6" />
           </button>
         </div>
         <div className="grid mt-14 xl:grid-cols-4 gap-7">
           {visibleServices.map((service, idx) => (
             <div
               key={idx}
-              className="p-9 flex flex-col items-start justify-between group bg-white transition-all duration-300 rounded-3xl"
+              className="p-9 flex hover:shadow-lg transition-all duration-200 flex-col items-start justify-between group bg-white rounded-3xl"
             >
               <div>
                 <div className="size-16 p-3 rounded-full bg-[#f8f4fb]">

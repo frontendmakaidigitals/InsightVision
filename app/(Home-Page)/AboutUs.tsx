@@ -34,10 +34,10 @@ const AboutUs = () => {
           </div>
         </div>
         <div>
-          <p className="text-indigo-400 font-bold">Who We Are</p>
+          <p className="text-[#bb9bfc] font-bold">Who We Are</p>
           <h2 className="text-2xl mt-2 leading-[1.2] font-[700] lg:text-5xl font-Plus-Jakarta-Sans">
             Transforming{" "}
-            <span className="text-indigo-800">Idea into Digital Reality</span>
+            <span className="text-indigo-700">Idea into Digital Reality</span>
           </h2>
 
           <p className="mt-5">
@@ -57,7 +57,7 @@ const AboutUs = () => {
             ))}
           </ul>
 
-          <button className="mt-7 px-6 py-3 bg-indigo-500 text-indigo-50 rounded-full">
+          <button className="px-6 mt-7 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-indigo-800 hover:bg-indigo-950 text-slate-50">
             Get started
           </button>
         </div>

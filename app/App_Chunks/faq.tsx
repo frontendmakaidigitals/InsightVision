@@ -6,24 +6,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PhoneCall, ChatDots } from "@phosphor-icons/react";
-import { Marquee } from "@/components/magicui/marquee";
-import { StarFour } from "@phosphor-icons/react";
-import CTA from "./CTA";
+
 export function AccordionDemo() {
-  const techTags = [
-    "Website Developemnt",
-    "Android Developement",
-    "UX/Ui Design",
-    "Graphics Design",
-    "Photography",
-    "Content Creation",
-  ];
+
   return (
-    <div className="bg-slate-200 ">
+    <div className="bg-slate-100 ">
       <div className="container pt-24 pb-32">
-        <p className="text-indigo-300">FAQs</p>
-        <h1 className="text-3xl lg:text-5xl font-Plus-Jakarta-Sans font-[500]">
-          Question? <span className="text-indigo-900">Look here.</span>
+        <p className="text-[#bb9bfc] font-Plus-Jakarta-Sans font-[600]">FAQs</p>
+        <h1 className="text-3xl mt-2 lg:text-5xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
+          Question? <span className="text-indigo-700">Look here.</span>
         </h1>
 
         <div className="grid grid-cols-[1.5fr_0.5fr] gap-5 mt-10">
@@ -44,14 +35,14 @@ export function AccordionDemo() {
             <AccordionItem value="item-3">
               <AccordionTrigger>Is it animated?</AccordionTrigger>
               <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if you
-                prefer.
+                Yes. It&apos;s animated by default, but you can disable it if
+                you prefer.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
           <div className="grid grid-cols-1 gap-y-3">
-            <div className="bg-indigo-950 p-4 rounded-lg">
+            <div className="bg-[#0e2147] p-4 rounded-lg">
               <div className="flex w-full justify-center">
                 <ChatDots weight="fill" className="text-slate-50 text-5xl" />
               </div>
@@ -62,7 +53,7 @@ export function AccordionDemo() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
               <div className="flex justify-center mt-3">
-                <button className="px-4 text-xs py-2 bg-indigo-400 text-slate-50 rounded-full">
+                <button className="px-4 text-xs py-2 cursor-pointer bg-indigo-500 font-[600] font-Plus-Jakarta-Sans text-slate-50 rounded-full">
                   Contact us
                 </button>
               </div>
@@ -83,24 +74,8 @@ export function AccordionDemo() {
           </div>
         </div>
       </div>
-      <CTA />
-      <Marquee reverse className="[--duration:30s] bg-indigo-500 py-5">
-        {techTags.map((tech, idx) => (
-          <p
-            key={idx}
-            className="text-indigo-50 font-DM-Sans font-[600] text-3xl"
-          >
-            &nbsp;
-            <StarFour
-              weight={"fill"}
-              className="inline-block size-6 align-middle mb-2"
-            />
-            &nbsp; &nbsp;
-            {tech}
-            &nbsp;
-          </p>
-        ))}
-      </Marquee>
+     
+    
     </div>
   );
 }

@@ -32,7 +32,7 @@ const Techstack = () => {
   return (
     <div className="py-16">
       <div className="container">
-        <h2 className="text-3xl text-center lg:text-6xl font-Plus-Jakarta-Sans font-[600]">
+        <h2 className="text-3xl mt-2 lg:text-6xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
           Technologies
         </h2>
       </div>

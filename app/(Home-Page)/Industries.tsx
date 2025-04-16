@@ -82,19 +82,17 @@ const Industries = () => {
       <div className="container space-y-16">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row gap-5 items-start lg:items-center">
-          <div className="flex-1">
-            <p className="text-indigo-400">Industries</p>
-            <h1 className="text-3xl lg:text-4xl mt-4 font-Plus-Jakarta-Sans font-semibold">
+          <div className="max-w-xl">
+            <p className="text-[#bb9bfc] font-Plus-Jakarta-Sans font-[600]">
+              Industries
+            </p>
+            <h1 className="text-3xl mt-2 mb-2 lg:text-6xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
               Awesome services from Industrial company
             </h1>
-            <button className="mt-5 px-5 py-2 rounded-full text-white bg-indigo-500">
-              Contact us
+            <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-black hover:bg-slate-800 text-slate-50">
+              Contact us <ArrowRight className="inline-block size-6" />
             </button>
           </div>
-          <p className="flex-1 text-slate-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            tenetur numquam corrupti vel possimus fugiat.
-          </p>
         </div>
 
         {/* Interactive Industry Section */}

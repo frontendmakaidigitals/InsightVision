@@ -15,9 +15,9 @@ const HomeForm = () => {
   return (
     <div className="bg-white py-20">
       <div className="container h-full gap-5 grid grid-cols-[.8fr_1.2fr]">
-        <div className="bg-indigo-950 text-indigo-200 py-5 px-5 flex flex-col justify-between items-start rounded-2xl w-full h-full">
+        <div className="bg-[#0e2147] text-indigo-200 py-8 px-8 flex flex-col justify-between items-start rounded-2xl w-full h-full">
           <div>
-            <h3 className="text-purple-100 font-Plus-Jakarta-Sans font-[600] text-xl">
+            <h3 className="text-purple-50 font-Plus-Jakarta-Sans font-[600] text-xl">
               Address
             </h3>
             <p className="mt-2 max-w-xs text-lg">
@@ -25,14 +25,14 @@ const HomeForm = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-purple-100 font-Plus-Jakarta-Sans font-[600] text-xl">
+            <h3 className="text-purple-50 font-Plus-Jakarta-Sans font-[600] text-xl">
               Contact
             </h3>
             <p className="mt-2 text-lg">Phone - +971 50 865 4179</p>
             <p className="text-lg">Email - info@insightvision.marketing</p>
           </div>
           <div>
-            <h3 className="text-purple-100  font-Plus-Jakarta-Sans font-[600] text-xl">
+            <h3 className="text-purple-50  font-Plus-Jakarta-Sans font-[600] text-xl">
               Open Time
             </h3>
             <p className="mt-2 text-lg">
@@ -40,14 +40,14 @@ const HomeForm = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-purple-100 font-Plus-Jakarta-Sans font-[600] text-xl">
+            <h3 className="text-purple-50 font-Plus-Jakarta-Sans font-[600] text-xl">
               Stay Connnected
             </h3>
-            <div className="flex gap-8 mt-2 justify-between w-full">
+            <div className="flex gap-8 mt-4 justify-between w-full">
               {icons.map(({ id, Icon }) => (
                 <div
                   key={id}
-                  className="text-4xl size-12 bg-indigo-500 flex justify-center items-center rounded-full"
+                  className="text-4xl size-12 p-2 bg-Palette-30 flex justify-center items-center rounded-full"
                 >
                   <Icon weight="fill" />
                 </div>
@@ -56,7 +56,7 @@ const HomeForm = () => {
           </div>
         </div>
         <div className="py-4">
-          <p className="text-sky-800 font-[600]">Contact us</p>
+        <p className="text-[#bb9bfc] font-[600]">Contact us</p>
           <h2 className="text-2xl font-DM-Sans font-[600] mt-1 lg:text-4xl">
             Get Your <span className="text-indigo-700">Free Quote</span> Today!
           </h2>
@@ -108,7 +108,7 @@ const HomeForm = () => {
               />
             </div>
           </div>
-          <button className="px-6 mt-5 rounded-full py-2 text-slate-50 hover:bg-indigo-400 bg-indigo-500">
+          <button className="px-6 mt-5 rounded-full py-2 text-slate-50 hover:bg-indigo-700 cursor-pointer bg-indigo-800">
             Send Message
           </button>
         </div>

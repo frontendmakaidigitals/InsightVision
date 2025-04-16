@@ -11,8 +11,8 @@ const Experience = () => {
 
   return (
     <div className="w-full  relative mt-20 mb-8">
-      <div className="container p-14 bg-slate-200 rounded-4xl">
-        <h1 className=" text-4xl font-Plus-Jakarta-Sans font-[600]">
+      <div className="container p-14 bg-[#FFFFFF] rounded-4xl">
+        <h1 className="text-2xl lg:text-5xl font-Plus-Jakarta-Sans font-[700]">
           The proof is in the numbers
         </h1>
         <div className=" mt-14 w-full grid grid-cols-[1.4fr_.6fr]">
@@ -37,7 +37,7 @@ const Experience = () => {
               </div>
             ))}
           </div>
-          <div className="w-full rounded-4xl flex justify-center items-center h-full bg-indigo-200">
+          <div className="w-full rounded-4xl flex justify-center items-center h-full bg-[#f9d5fb]">
             <div className="flex flex-col justify-center items-center">
               <p className="text-5xl font-DM-Sans font-[600]">1000+</p>
               <p className="mt-0 font-DM-Sans font-[600]">Followers</p>
