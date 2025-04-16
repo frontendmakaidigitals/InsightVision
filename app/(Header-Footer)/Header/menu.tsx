@@ -169,7 +169,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       <AnimatePresence mode="wait">
         {links.map((link, idx) =>
           link.name.toLowerCase() === "services" ? (
-            <div className="relative font-Plus-Jakarta-Sans font-[500]">
+            <div key={idx} className="relative font-Plus-Jakarta-Sans font-[500]">
               <motion.div
                 variants={containerVariants}
                 initial="initial"
