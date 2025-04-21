@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
 const Service2 = () => {
@@ -9,12 +8,14 @@ const Service2 = () => {
       img: "service-logo/web-development.png",
       gradient: "bg-gradient-to-r from-[#fde68a] to-[#f59e0b] ",
       link: "Web-Development",
+      desc: "From concept to code, we build your digital presence.",
     },
     {
       name: "App Development",
       img: "service-logo/app-development.png",
       gradient: "bg-gradient-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]",
       link: "App-Development",
+      desc: "Creating intuitive, high-performance mobile apps.",
     },
     {
       name: "Social Media Marketing",
@@ -22,12 +23,14 @@ const Service2 = () => {
       gradient:
         "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-[#f72464] via-[#ff858a] to-[#fff3a7]",
       link: "Social-Media-Marketing",
+      desc: "Smart social strategies that boost visibility and impact.",
     },
     {
       name: "SEO Marketing",
       img: "service-logo/seo.png",
       gradient: "bg-gradient-to-bl from-[#edd2f3] via-[#fffcdc] to-[#84dfff]",
       link: "SEO-Marketing",
+      desc: "Drive organic traffic that turns into real leads.",
     },
     {
       name: "Photography & Videography",
@@ -35,53 +38,31 @@ const Service2 = () => {
       gradient:
         "bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-[#6366f1] via-[#a5b4fc] to-[#e0e7ff] ",
       link: "Photography",
-    },
-    {
-      name: "Media Buying",
-      img: "service-logo/media.png",
-      gradient: "bg-gradient-to-bl from-[#84cc16] via-[#16a34a] to-[#0f766e] ",
-      link: "Media-Buying",
+      desc: "Capturing visuals that tell your brand's story.",
     },
     {
       name: "Performance Marketing",
       img: "service-logo/performance.png",
       gradient: "bg-gradient-to-tl from-[#f6fbf4] via-[#f5df99] to-[#5fd068] ",
       link: "Performance-Marketing",
+      desc: "Driving growth through high-performance campaigns.",
     },
     {
       name: "Content Marketing",
       img: "service-logo/content-writing.png",
       gradient: "bg-gradient-to-b from-[#06b6d4] via-[#2563eb] to-[#6366f1]",
       link: "Content-Marketing",
-    },
-    {
-      name: "Public Relations",
-      img: "service-logo/public-relation.png",
-      gradient: "bg-gradient-to-br from-[#f59e0b] via-[#ea580c] to-[#b91c1c] ",
-      link: "Public-Relations",
+      desc: "Creating content that connects, converts, and builds trust.",
     },
     {
       name: "Branding & Advertising",
       img: "service-logo/branding.png",
       gradient: "bg-gradient-to-bl from-[#84cc16] via-[#22c55e] to-[#16a34a]",
       link: "Branding",
-    },
-    {
-      name: "IT Consulting & Advisory",
-      img: "service-logo/it-consulting.png",
-      gradient: "bg-gradient-to-b from-[#8d8daa] via-[#dfdfde] to-[#f7f5f2] ",
-      link: "IT-Consulting",
-    },
-    {
-      name: "Cyber Security",
-      img: "service-logo/cyber-security.png",
-      gradient:
-        "bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#ff4d4d] via-[#ff8364] to-[#fdb87d]",
-      link: "Cyber-Security",
+      desc: "Building bold brands and campaigns that stand out.",
     },
   ];
-  const [showall, setShowAll] = useState(false);
-  const visibleServices = showall ? services : services.slice(0, 8);
+
   return (
     <div className="py-20 bg-gradient-to-b from-Palette-20/8 from-[10%] to-transparent">
       <div className="container">
@@ -97,7 +78,7 @@ const Service2 = () => {
           </button>
         </div>
         <div className="grid mt-14 xl:grid-cols-4 gap-7">
-          {visibleServices.map((service, idx) => (
+          {services.map((service, idx) => (
             <div
               key={idx}
               className="p-9 flex hover:shadow-lg transition-all duration-200 flex-col items-start justify-between group bg-white rounded-3xl"
@@ -112,10 +93,7 @@ const Service2 = () => {
                 <h3 className="text-xl font-Plus-Jakarta-Sans font-[500] lg:text-2xl mt-6 text-black ">
                   {service.name}
                 </h3>
-                <p className="mt-4 text-slate-800">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Animi hic ducimus deleniti. Quas incidunt ducimus laboriosam,
-                </p>
+                <p className="mt-4 text-slate-800">{service.desc}</p>
               </div>
               <button className="mt-8 underline underline-offset-4 decoration-2 decoration-purple-800 font-bold rounded-full text-[#11002e]">
                 Learn more{" "}
@@ -123,14 +101,6 @@ const Service2 = () => {
               </button>
             </div>
           ))}
-        </div>
-        <div className="flex justify-center mt-14 ">
-          <button
-            className="bg-[#D0C4DF] rounded-full px-6 py-2"
-            onClick={() => setShowAll(!showall)}
-          >
-            {showall ? "Show less" : "Show more"}
-          </button>
         </div>
       </div>
     </div>

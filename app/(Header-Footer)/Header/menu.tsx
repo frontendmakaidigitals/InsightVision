@@ -34,134 +34,62 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
 
   const menui = [
     {
-      title: "App Development",
-      image:
-        "https://cdn.dribbble.com/userupload/12017862/file/original-44519a7c4bcabd10527f4811e2ae8086.png?format=webp&resize=400x300&vertical=center", // Example image path
-      color: "bg-blue-500",
-      rotate: -8,
-      rounded: 60,
-      top: 30,
-      left: 12,
-      route: "App-Development",
+      name: "Web Development",
+      img: "service-logo/web-development.png",
+      gradient: "bg-gradient-to-r from-[#fde68a] to-[#f59e0b] ",
+      link: "Web-Development",
+      desc: "From concept to code, we build your digital presence.",
     },
     {
-      title: "Web Development",
-      image: "https://mobirise.com/assets24/images/templates.webp",
-      color: "bg-green-500",
-      rotate: -4,
-      rounded: 70,
-      top: 30,
-      left: 8,
-      route: "Web-Development",
+      name: "App Development",
+      img: "service-logo/app-development.png",
+      gradient: "bg-gradient-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]",
+      link: "App-Development",
+      desc: "Creating intuitive, high-performance mobile apps.",
     },
     {
-      title: "Social Media Marketing",
-      image:
-        "https://img.freepik.com/premium-photo/3d-rendered-photos-social-media-marketing-concept-marketing-8k-result_1139417-30443.jpg",
-      color: "bg-red-500",
-      rotate: 3,
-      rounded: 80,
-      top: 20,
-      left: 18,
-      route: "Social-Media-Marketing",
+      name: "Social Media Marketing",
+      img: "service-logo/social-media.png",
+      gradient:
+        "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-[#f72464] via-[#ff858a] to-[#fff3a7]",
+      link: "Social-Media-Marketing",
+      desc: "Smart social strategies that boost visibility and impact.",
     },
     {
-      title: "Content Marketing",
-      image:
-        "https://cdn.pixabay.com/photo/2019/04/07/23/11/content-marketing-4111003_1280.jpg",
-      color: "bg-yellow-500",
-      rotate: 8,
-      rounded: 60,
-      top: 40,
-      left: 40,
-      route: "Content-Marketing",
+      name: "SEO Marketing",
+      img: "service-logo/seo.png",
+      gradient: "bg-gradient-to-bl from-[#edd2f3] via-[#fffcdc] to-[#84dfff]",
+      link: "SEO-Marketing",
+      desc: "Drive organic traffic that turns into real leads.",
     },
     {
-      title: "SEO Marketing",
-      image:
-        "https://images.inc.com/uploaded_files/image/1920x1080/getty_493335634_2000133320009280405_338428.jpg",
-      color: "bg-indigo-500",
-      rotate: -3,
-      rounded: 60,
-      top: 30,
-      left: 18,
-      route: "SEO-Marketing",
+      name: "Photography & Videography",
+      img: "service-logo/photography.png",
+      gradient:
+        "bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-[#6366f1] via-[#a5b4fc] to-[#e0e7ff] ",
+      link: "Photography",
+      desc: "Capturing visuals that tell your brand's story.",
     },
     {
-      title: "Media Buying",
-      image:
-        "https://static.vecteezy.com/system/resources/previews/046/909/381/non_2x/media-buying-process-concept-flat-illustration-vector.jpg",
-      color: "bg-purple-500",
-      rotate: -10,
-      rounded: 66,
-      top: 35,
-      left: 15,
-      route: "Media-Buying",
+      name: "Performance Marketing",
+      img: "service-logo/performance.png",
+      gradient: "bg-gradient-to-tl from-[#f6fbf4] via-[#f5df99] to-[#5fd068] ",
+      link: "Performance-Marketing",
+      desc: "Driving growth through high-performance campaigns.",
     },
     {
-      title: "Performance Marketing",
-      image:
-        "https://media.licdn.com/dms/image/v2/D4D12AQHGRvxtLtUufg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1709730782036?e=2147483647&v=beta&t=YJmFuKAwpVhA-KxHNeHXy7YuNt5VHAGY8Kz4cBsD180",
-      color: "bg-orange-500",
-      rotate: -8,
-      rounded: 60,
-      top: 30,
-      left: 12,
-      route: "Performance-Marketing",
+      name: "Content Marketing",
+      img: "service-logo/content-writing.png",
+      gradient: "bg-gradient-to-b from-[#06b6d4] via-[#2563eb] to-[#6366f1]",
+      link: "Content-Marketing",
+      desc: "Creating content that connects, converts, and builds trust.",
     },
     {
-      title: "IT Consulting & Advisory",
-      image:
-        "https://www.enterpriseitworld.com/wp-content/uploads/2023/08/IT-Consulting-Company.jpg",
-      color: "bg-teal-500",
-      rotate: -10,
-      rounded: 60,
-      top: 50,
-      left: 17,
-      route: "IT-Consulting-&-Advisory",
-    },
-    {
-      title: "Cyber Security",
-      image:
-        "https://t4.ftcdn.net/jpg/07/53/50/51/360_F_753505163_oGvv1D8KlniGSwUx7ywO9sDIWbzpbSfM.jpg",
-      color: "bg-gray-500",
-      rotate: 3,
-      rounded: 66,
-      top: 30,
-      left: 16,
-      route: "Cyber-Security",
-    },
-    {
-      title: "Public Relations",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybmhhbx17asCgjoj5vjhBIpJoiV_R_OBX6A&s",
-      color: "bg-pink-500",
-      rotate: -8,
-      rounded: 60,
-      top: 30,
-      left: 12,
-      route: "Public-Relations",
-    },
-    {
-      title: "Branding & Designing",
-      image:
-        "https://bitwisebranding.com/uploads/blog-images/1603114000main.png",
-      color: "bg-lime-500",
-      rotate: -8,
-      rounded: 60,
-      top: 30,
-      left: 12,
-      route: "Branding-&-Designing",
-    },
-    {
-      title: "Photography & Videography",
-      image:
-        "https://bitwisebranding.com/uploads/blog-images/1603114000main.png",
-      rotate: -8,
-      rounded: 60,
-      top: 30,
-      left: 12,
-      route: "Photography-&-Videography",
+      name: "Branding & Advertising",
+      img: "service-logo/branding.png",
+      gradient: "bg-gradient-to-bl from-[#84cc16] via-[#22c55e] to-[#16a34a]",
+      link: "Branding",
+      desc: "Building bold brands and campaigns that stand out.",
     },
   ];
   return (
@@ -169,7 +97,10 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       <AnimatePresence mode="wait">
         {links.map((link, idx) =>
           link.name.toLowerCase() === "services" ? (
-            <div key={idx} className="relative font-Plus-Jakarta-Sans font-[500]">
+            <div
+              key={idx}
+              className="relative font-Plus-Jakarta-Sans font-[500]"
+            >
               <motion.div
                 variants={containerVariants}
                 initial="initial"
@@ -251,7 +182,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                       {/* Inner content measured for height */}
                       <div
                         ref={contentRef}
-                        className="p-4 grid grid-cols-[1.4fr_.6fr] gap-4"
+                        className="p-4 grid grid-cols-[1.4fr_.6fr] gap-6"
                       >
                         <div className="grid h-full border-r pr-4 border-slate-300 grid-cols-2 gap-1">
                           {menui.map((menu, menuId) => (
@@ -263,14 +194,16 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                               } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-lg`}
                             >
                               <motion.p className="">
-                                {menu.title}
+                                {menu.name}
                                 <motion.span className="text-sm block font-[500] text-slate-600">
-                                  {"Lorem ipsum dolor"}
+                                  {menu.desc}
                                 </motion.span>
                               </motion.p>
 
-                              <div className="hidden size-10 justify-center items-center group-hover:flex rounded-full bg-indigo-200">
-                                <ArrowUpRight className="" />
+                              <div>
+                                <div className="hidden size-10 justify-center items-center group-hover:flex rounded-full bg-indigo-200">
+                                  <ArrowUpRight className="" />
+                                </div>
                               </div>
                             </Link>
                           ))}

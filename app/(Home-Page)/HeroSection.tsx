@@ -1,77 +1,43 @@
 "use client";
-import React, { useState, useRef } from "react";
-import { Play, Pause } from "@phosphor-icons/react";
-import { motion } from "motion/react";
+import React  from "react";
+ 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
+  
   return (
     <div className="flex flex-col justify-start items-center">
       <div className="relative container grid grid-cols-2 h-full">
         <div className="w-full flex flex-col items-start justify-center h-full">
-          <h1 className="xl:text-7xl leading-[1.2] font-Plus-Jakarta-Sans font-[700] text-slate-800">
-            Simple and{" "}
-            <span className="text-indigo-500">Powerful Social Media</span>{" "}
-            Analytics
+          <h1 className="xl:text-6xl leading-[1.2] font-Plus-Jakarta-Sans font-[700] text-slate-800">
+            Power Your{" "}
+            <span className="text-indigo-700">Brand with Strategies</span> in
+            Measurable Results.
           </h1>
           <p className="mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            numquam maiores molestias expedita quaerat soluta. Nulla doloremque
-            iusto assumenda
+            We empower brands with smart, result-driven marketing strategies
+            that elevate visibility, engagement, and growth.
           </p>
           <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-indigo-800 hover:bg-indigo-950 text-slate-50">
             Get Started
           </button>
         </div>
-        <div className="w-full flex justify-end">
-          <div className=" h-fit max-w-xl">
-            <div className="grid grid-cols-3 gap-3 h-fit">
+        <div className="w-full  flex justify-end">
+          <div className="  flex gap-4">
+            <div className="h-full flex-col flex justify-center items-center">
+              <img src={"Hero/traffic.svg"} className="w-[190px]" />
+            </div>
+            <div className="grid grid-rows-2 gap-4">
               <img src={"Hero/budget.svg"} className=" w-[190px]" />
               <img
                 src={"Hero/Generates traffic & leads.svg"}
                 className=" w-[190px]"
               />
+            </div>
+            <div className="grid grid-rows-2 gap-4">
+              <img src={"Hero/PAST_WEEK.svg"} className="w-[190px]" />
               <img
                 src={"Hero/facebook marketing campaign.svg"}
                 className="w-[190px]"
               />
-            </div>
-            <div className="mt-5">
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.25, ease: [0, 0, 0.5, 1] }}
-                className=" group overflow-hidden rounded-xl aspect-video"
-              >
-                {" "}
-                <video
-                  ref={videoRef}
-                  src="https://github.com/frontendmakaidigitals/InsightVision/raw/refs/heads/master/public/media/ISVWebsite.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  onClick={togglePlay}
-                  playsInline
-                  className="origin-bottom-right ml-auto" // <-- ADD ml-auto here
-                />
-                <button
-                  onClick={togglePlay}
-                  className="absolute cursor-pointer group-hover:block hidden bottom-4 left-1/2 -translate-x-1/2 bg-gray-200/30 backdrop-filter backdrop-blur-xl text-white px-4 py-2 rounded-full shadow-md  transition"
-                >
-                  {isPlaying ? <Pause /> : <Play />}
-                </button>
-              </motion.div>
             </div>
           </div>
         </div>
