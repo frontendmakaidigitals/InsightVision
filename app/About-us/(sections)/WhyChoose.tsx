@@ -13,13 +13,13 @@ const WhyChoose = () => {
       title: "Targeted Ad Campaigns",
       icon: "/about/cards/icon-1.png", // Add icon component or path here
       desc: "Reach your ideal audience through data-driven campaigns across Google, Meta, and more.",
-      class: "mt-7",
+      class: "mt-8",
     },
     {
       title: "Social Media",
       icon: "/about/cards/icon-2.png", // Add icon component or path here
       desc: "Engage your audience and grow your brand with consistent, high-quality content.",
-      class: "mt-14",
+      class: "mt-16",
     },
   ];
   return (
