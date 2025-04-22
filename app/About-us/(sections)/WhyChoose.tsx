@@ -1,7 +1,27 @@
 "use client";
 import React from "react";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight, X } from "@phosphor-icons/react";
 const WhyChoose = () => {
+  const benefits = [
+    {
+      title: "Website Optimization",
+      icon: "/about/cards/icon-3.png", // Add icon component or path here
+      desc: "Improve site speed, SEO, and user experience to convert more visitors into customers.",
+      class: "",
+    },
+    {
+      title: "Targeted Ad Campaigns",
+      icon: "/about/cards/icon-1.png", // Add icon component or path here
+      desc: "Reach your ideal audience through data-driven campaigns across Google, Meta, and more.",
+      class: "mt-7",
+    },
+    {
+      title: "Social Media",
+      icon: "/about/cards/icon-2.png", // Add icon component or path here
+      desc: "Engage your audience and grow your brand with consistent, high-quality content.",
+      class: "mt-14",
+    },
+  ];
   return (
     <div className="relative  w-full py-20">
       <div className=" container grid grid-cols-2 gap-10 relative z-20">
@@ -73,6 +93,29 @@ const WhyChoose = () => {
             }
             className="w-full relative z-10 h-full object-contain"
           />
+        </div>
+      </div>
+      <div className="relative">
+        <div
+          className={`absolute -top-10 left-0 -z-10 size-[350px] bg-Palette-40 blur-[150px] rounded-full`}
+        />
+        <div className="container max-w-6xl mt-28 flex justify-center items-start gap-5">
+          {benefits.map((item, idx) => (
+            <div
+              className={`w-full p-7 bg-white rounded-xl shadow-md ${item.class}`}
+              key={idx}
+            >
+              <div className="size-14 bg-slate-100 rounded-full flex justify-center items-center">
+                <img src={item.icon} className="p-2" />
+              </div>
+              <div className="mt-4">
+                <h2 className="text-2xl font-Plus-Jakarta-Sans font-[600]">
+                  {item.title}
+                </h2>
+                <p className="text-md mt-3">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
