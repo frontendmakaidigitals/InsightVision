@@ -117,7 +117,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                 onClick={() => setServiceHoverActive(!serviceHoverActive)}
                 className={`pb-1 overflow-hidden group text-lg relative `}
               >
-                <AnimatePresence>
                   {(hoverIdx === idx || pathName === link.link) && (
                     <motion.div
                       initial={{
@@ -130,7 +129,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                       className="z-10 absolute top-[90%] bg-black left-0 h-[1px]"
                     />
                   )}
-                </AnimatePresence>
                 <div className="inline-flex items-center">
                   {link.name.split("").map((char, index) => (
                     <motion.p key={index} className="inline-block">
@@ -162,7 +160,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                   </motion.div>
                 </div>
               </motion.div>
-              <AnimatePresence mode="wait">
                 {showPanel && (
                   <motion.div
                     onMouseEnter={() => setIsHovered(true)}
@@ -223,7 +220,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                     </motion.div>
                   </motion.div>
                 )}
-              </AnimatePresence>
             </div>
           ) : (
             <motion.div
@@ -236,7 +232,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
               className={`pb-1 font-Plus-Jakarta-Sans font-[500] overflow-hidden text-lg relative `}
             >
               <Link href={link.link}>
-                <AnimatePresence>
                   {(hoverIdx === idx || pathName === link.link) && (
                     <motion.div
                       initial={{
@@ -249,7 +244,6 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                       className="z-10 absolute top-[90%] bg-black left-0 h-[1px]"
                     />
                   )}
-                </AnimatePresence>
                 {link.name.split("").map((char, index) => (
                   <motion.p key={index} className="inline-block">
                     {char === "-" ? (

@@ -35,6 +35,7 @@ export default function WorkingProcess() {
       <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-10">
         Our Working Process
       </h2>
+
       <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {steps.map((step, idx) => (
           <div key={idx} className="flex flex-col items-center relative group">

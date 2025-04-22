@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ArrowUpRight, X } from "@phosphor-icons/react";
+import { ArrowUpRight, Sparkle } from "@phosphor-icons/react";
 const WhyChoose = () => {
   const benefits = [
     {
@@ -95,14 +95,27 @@ const WhyChoose = () => {
           />
         </div>
       </div>
-      <div className="relative">
+      <div className="relative mt-28">
         <div
           className={`absolute -top-10 left-0 -z-10 size-[350px] bg-Palette-40 blur-[150px] rounded-full`}
         />
-        <div className="container max-w-6xl mt-28 flex justify-center items-start gap-5">
+        <div className="relative z-20 grid grid-cols-2 items-center container max-w-6xl mb-20 gap-4">
+          <Sparkle
+            weight="fill"
+            className="text-3xl absolute top-[150%] left-1/2 -transltate-x-1/2 "
+          />
+          <h2 className="text-2xl xl:text-4xl font-Plus-Jakarta-Sans font-[600]">
+            Our services solve any business problem
+          </h2>
+          <p className="text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            similique excepturi commodi blanditiis maiores veritatis non.
+          </p>
+        </div>
+        <div className="container max-w-6xl flex justify-center items-start gap-5">
           {benefits.map((item, idx) => (
             <div
-              className={`w-full p-7 bg-white rounded-xl shadow-md ${item.class}`}
+              className={`w-full p-7 bg-white rounded-3xl shadow-md ${item.class}`}
               key={idx}
             >
               <div className="size-14 bg-slate-100 rounded-full flex justify-center items-center">
