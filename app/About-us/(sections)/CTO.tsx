@@ -28,7 +28,7 @@ const CTO = () => {
               </p>
             </div>
             <div className="flex justify-end mt-3">
-              <button className="px-4 py-2 bg-slate-50 text-slate-600 font-[600] font-Plus-Jakarta-Sans rounded-lg">
+              <button className="px-4 py-2 bg-white text-slate-600 font-[600] font-Plus-Jakarta-Sans rounded-lg">
                 Contact us
               </button>
             </div>
