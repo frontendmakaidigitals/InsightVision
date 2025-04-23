@@ -13,7 +13,7 @@ const About = () => {
             About us
           </p>
           <h1 className="text-3xl mt-4 lg:text-4xl xl:text-6xl font-Plus-Jakarta-Sans text-indigo-950">
-            We're Strategic Digital Marketing Agency
+            We&apos;re Strategic Digital Marketing Agency
           </h1>
           <p className="mt-10">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
