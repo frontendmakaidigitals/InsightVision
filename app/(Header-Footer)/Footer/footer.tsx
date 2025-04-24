@@ -7,6 +7,7 @@ import {
   InstagramLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 const Footer = () => {

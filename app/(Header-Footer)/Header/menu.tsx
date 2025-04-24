@@ -115,7 +115,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                   setHoverIdx(null);
                 }}
                 onClick={() => setServiceHoverActive(!serviceHoverActive)}
-                className={`pb-1 overflow-hidden group text-lg relative `}
+                className={`pb-1 overflow-hidden group text-md relative `}
               >
                   {(hoverIdx === idx || pathName === link.link) && (
                     <motion.div
@@ -188,7 +188,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                               href={""}
                               className={`${
                                 menuId >= menui.length - 2 ? "" : ""
-                              } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-lg`}
+                              } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-md`}
                             >
                               <motion.p className="">
                                 {menu.name}
@@ -229,7 +229,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
               key={idx}
               onMouseEnter={() => setHoverIdx(idx)}
               onMouseLeave={() => setHoverIdx(null)}
-              className={`pb-1 font-Plus-Jakarta-Sans font-[500] overflow-hidden text-lg relative `}
+              className={`pb-1 font-Plus-Jakarta-Sans font-[500] overflow-hidden text-md relative `}
             >
               <Link href={link.link}>
                   {(hoverIdx === idx || pathName === link.link) && (
