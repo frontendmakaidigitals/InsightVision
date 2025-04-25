@@ -21,49 +21,49 @@ const Page = () => {
       description:
         " We build secure, scalable, and user-friendly online stores that make shopping easy and drive sales.",
       img: "https://images.unsplash.com/photo-1688561807440-8a57dfa77ee3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "col-span-2",
+      class: "col-span-1 lg:col-span-2",
     },
     {
       title: "Website Maintenance & Support",
       description:
         " Keep your website running smoothly with regular updates, security checks, and ongoing technical support.",
       img: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "col-span-1",
+      class: "col-span-1 lg:col-span-1",
     },
     {
       title: "SEO-Optimized Development",
       description:
         " Our code is built with SEO best practices to help your website rank higher and get discovered faster.",
       img: "https://images.unsplash.com/photo-1562577309-2592ab84b1bc?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "",
+      class: "col-span-1 lg:",
     },
     {
       title: "Performance & Speed Optimization",
       description:
         " We fine-tune your website to load faster and perform better, ensuring a seamless user experience.",
       img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "",
+      class: "col-span-1 lg:",
     },
     {
       title: "UI/UX Design Integration",
       description:
         " We combine smart design with intuitive navigation to create user experiences that keep visitors engaged.",
       img: "https://images.unsplash.com/photo-1653647054667-c99dc7f914ef?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "",
+      class: "col-span-1 lg:",
     },
     {
       title: "Content Management Systems (CMS)",
       description:
         " Easily manage your website content with powerful, flexible CMS solutions like WordPress, Webflow, or Shopify.",
       img: "https://neilpatel.com/wp-content/uploads/2023/05/Best_content_management_system3.jpg",
-      class: "",
+      class: "col-span-1 lg:",
     },
     {
       title: "API Integration & Third-Party Services",
       description:
         "We connect your website with the tools you use—payment gateways, CRMs, analytics, and more—for smooth automation and functionality.",
       img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      class: "col-span-2",
+      class: "col-span-1 lg:col-span-2",
     },
   ];
   const accordionData = [

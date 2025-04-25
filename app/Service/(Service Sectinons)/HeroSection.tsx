@@ -36,12 +36,12 @@ const HeroSection = ({
     <div className="py-12 relative">
       <div
         style={{ height: "calc(100% + 80px)" }}
-        className="absolute -top-20 left-0 w-full  -z-10"
+        className="absolute -top-20 left-0 w-full -z-10"
       >
         <img src={"/Web-developement/heroBlur.svg"} className="w-full opacity-[.4] h-full object-cover" />
       </div>
-      <div className="container grid grid-cols-2 gap-10">
-        <div>
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="order-2 lg:order-1">
           <h1 className="text-3xl lg:text-6xl font-DM-Sans font-[600]">
             {ColorText(title)}
           </h1>
@@ -50,7 +50,7 @@ const HeroSection = ({
             Contact us
           </button>
         </div>
-        <div className="w-full h-[550px] overflow-hidden  ">
+        <div className="w-full h-[280px] lg:h-[550px] overflow-hidden  order-1 lg:order-2 ">
           <img className="w-full h-full object-cover" src={img} />
         </div>
       </div>

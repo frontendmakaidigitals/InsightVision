@@ -14,7 +14,7 @@ export function AccordionDemo({
 }) {
   return (
     <div className="bg-slate-100 ">
-      <div className="container pt-24 pb-32">
+      <div className="container pt-24 pb-5 lg:pb-28">
         <p className="text-[#bb9bfc] font-Plus-Jakarta-Sans font-[600]">FAQs</p>
         <h1 className="text-3xl mt-2 lg:text-5xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
           Question? <span className="text-indigo-700">Look here.</span>
@@ -30,7 +30,7 @@ export function AccordionDemo({
             ))}
           </Accordion>
 
-          <div className="grid grid-cols-1 mt-10 lg:mt-0 gap-y-3">
+          <div className="grid grid-cols-1 mt-10 lg:mt-0 gap-y-3 self-start">
             <div className="bg-[#0e2147] p-4 rounded-lg">
               <div className="flex w-full justify-center">
                 <ChatDots weight="fill" className="text-slate-50 text-5xl" />

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 type ServiceProps = {
   title: string;
@@ -37,27 +39,22 @@ const Services = ({
       return <span>{text}</span>;
     }
   };
+
   return (
     <div className="bg-white mt-20 py-20">
       <div className="container">
-        
         <h1 className="text-3xl font-[600] lg:text-5xl font-Plus-Jakarta-Sans">
           {ColorText(heading)}
         </h1>
 
-        <div className="w-full grid grid-cols-3 gap-5 mt-10">
+        <div className="w-full grid-cols-1 grid lg:grid-cols-3 gap-5 mt-10">
           {arr.map((service, idx) => (
             <div
               key={idx}
               className={`${service.class} relative flex items-end overflow-hidden h-[330px] bg-indigo-200 rounded-xl`}
             >
               <div className="w-full h-full bg-slate-900/20 z-10 absolute inset-0" />
-              <div className=" absolute inset-0  w-full h-full">
-                <img
-                  src={service.img}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <ParallaxImage src={service.img} idx={idx} />
               <div className="relative text-slate-50 w-full z-10 bg-gradient-to-t from-slate-950/60 p-4">
                 <p className="text-xl lg:text-2xl font-Plus-Jakarta-Sans font-[500]">
                   {service.title}
@@ -75,3 +72,27 @@ const Services = ({
 };
 
 export default Services;
+
+const ParallaxImage = ({ src, idx }: { src: string; idx: number }) => {
+  const imgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-10, 10]); // Subtle parallax effect
+
+  return (
+    <div
+      ref={imgRef}
+      className="absolute inset-0 w-full h-full"
+    >
+      <motion.img
+        style={{ y, scale: 1.05, willChange: "transform" }}
+        className="w-full h-full object-cover transition-transform duration-300 ease-out"
+        src={src}
+        loading="lazy"
+      />
+    </div>
+  );
+};
