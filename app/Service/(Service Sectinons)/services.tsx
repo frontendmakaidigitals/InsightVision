@@ -53,9 +53,9 @@ const Services = ({
               key={idx}
               className={`${service.class} relative flex items-end overflow-hidden h-[330px] bg-indigo-200 rounded-xl`}
             >
-              <div className="w-full h-full bg-slate-900/20 z-10 absolute inset-0" />
+              <div className="w-full h-full bg-slate-900/40 z-10 absolute inset-0" />
               <ParallaxImage src={service.img} idx={idx} />
-              <div className="relative text-slate-50 w-full z-10 bg-gradient-to-t from-slate-950/60 p-4">
+              <div className="relative text-white w-full z-10 bg-gradient-to-t from-slate-950/60 p-4">
                 <p className="text-xl lg:text-2xl font-Plus-Jakarta-Sans font-[500]">
                   {service.title}
                 </p>
