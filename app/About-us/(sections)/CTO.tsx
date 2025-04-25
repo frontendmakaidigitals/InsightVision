@@ -1,7 +1,11 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-const CTO = () => {
+type CTOProps = {
+  heading: string;
+  description: string;
+};
+const CTO = ({ heading, description }: CTOProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [containerDimension, setContainerDimension] = useState({
     width: 0,
@@ -104,13 +108,9 @@ const CTO = () => {
         <div className={"rounded-3xl  text-white  relative z-10 "}>
           <div className="">
             <h3 className="text-slate-50 text-3xl font-Plus-Jakarta-Sans font-[600]">
-              Ready to Bring Your Brand to Life?
+              {heading}
             </h3>
-            <p className="text-slate-100 mt-4 ">
-              Whether you have a project in mind, need expert marketing support,
-              or just want to explore how we can work together, we’d love to
-              hear from you. Reach out anytime!
-            </p>
+            <p className="text-slate-100 mt-4 ">{description}</p>
           </div>
           <div className="flex justify-end mt-3">
             <button className="px-4 py-2 bg-violet-600 cursor-pointer text-slate-50 font-[600] font-Plus-Jakarta-Sans rounded-lg">

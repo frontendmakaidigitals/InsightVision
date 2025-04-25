@@ -11,7 +11,10 @@ const page = () => {
       <About />
       <WorkingProcess />
       <WhyChoose />
-      <CTO />
+      <CTO
+        heading="Ready to Bring Your Brand to Life?"
+        description="Whether you have a project in mind, need expert marketing support, or just want to explore how we can work together, we’d love to hear from you. Reach out anytime!"
+      />
     </div>
   );
 };

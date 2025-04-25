@@ -7,8 +7,11 @@ import {
 } from "@/components/ui/accordion";
 import { PhoneCall, ChatDots } from "@phosphor-icons/react";
 
-export function AccordionDemo() {
-
+export function AccordionDemo({
+  accData,
+}: {
+  accData: { title: string; description: string }[];
+}) {
   return (
     <div className="bg-slate-100 ">
       <div className="container pt-24 pb-32">
@@ -19,26 +22,12 @@ export function AccordionDemo() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.5fr] gap-5 mt-10">
           <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if
-                you prefer.
-              </AccordionContent>
-            </AccordionItem>
+            {accData.map((accordion, idx) => (
+              <AccordionItem value={`item-${idx}`} key={idx} className="">
+                <AccordionTrigger>{accordion.title}</AccordionTrigger>
+                <AccordionContent>{accordion.description}</AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
 
           <div className="grid grid-cols-1 mt-10 lg:mt-0 gap-y-3">
@@ -74,8 +63,6 @@ export function AccordionDemo() {
           </div>
         </div>
       </div>
-     
-    
     </div>
   );
 }

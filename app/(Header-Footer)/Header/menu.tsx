@@ -37,7 +37,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       name: "Web Development",
       img: "service-logo/web-development.png",
       gradient: "bg-gradient-to-r from-[#fde68a] to-[#f59e0b] ",
-      link: "Web-Development",
+      link: "Web-development",
       desc: "From concept to code, we build your digital presence.",
     },
     {
@@ -185,7 +185,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                           {menui.map((menu, menuId) => (
                             <Link
                               key={menuId}
-                              href={""}
+                              href={`/Service/${menu.link}`}
                               className={`${
                                 menuId >= menui.length - 2 ? "" : ""
                               } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-md`}
