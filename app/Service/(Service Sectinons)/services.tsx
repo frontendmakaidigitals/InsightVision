@@ -11,7 +11,7 @@ const Services = () => {
     { title: "", description: "", icon: "", class: "col-span-2" },
   ];
   return (
-    <div className="py-10">
+    <div className="bg-white mt-20 py-20">
       <div className="container">
         <h1 className="text-3xl font-[600] lg:text-5xl font-Plus-Jakarta-Sans">
           Our <span className="text-indigo-600">Services</span>
