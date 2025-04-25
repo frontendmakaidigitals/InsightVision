@@ -101,70 +101,71 @@ const Industries = () => {
         <div className="relative ">
           {/* Left Buttons */}
           <div>
-      {/* Mobile Dropdown */}
-      <div className="lg:hidden px-4 py-6">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-full bg-black text-white font-semibold py-3 px-5 rounded-full flex justify-between items-center"
-        >
-          <span>{industries[active]?.name}</span>
-          <ArrowRight
-            className={`transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}
-          />
-        </button>
+            {/* Mobile Dropdown */}
+            <div className="lg:hidden px-4 py-6">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full bg-black text-white font-semibold py-3 px-5 rounded-full flex justify-between items-center"
+              >
+                <span>{industries[active]?.name}</span>
+                <ArrowRight
+                  className={`transition-transform duration-300 ${
+                    isOpen ? "rotate-90" : ""
+                  }`}
+                />
+              </button>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              key="dropdown"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="overflow-hidden mt-3 space-y-2"
-            >
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    key="dropdown"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden mt-3 space-y-2"
+                  >
+                    {industries.map((industry, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setActive(idx);
+                          setIsOpen(false);
+                        }}
+                        className={`text-start w-full py-2 px-4 rounded-lg text-white font-medium ${
+                          active === idx ? "bg-[#3b5bdb]" : "bg-black"
+                        }`}
+                      >
+                        {industry.name}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Desktop List */}
+            <div className="hidden lg:block h-full w-full lg:w-[37%] p-10 bg-black rounded-4xl space-y-5 overflow-y-auto">
               {industries.map((industry, idx) => (
                 <button
                   key={idx}
-                  onClick={() => {
-                    setActive(idx);
-                    setIsOpen(false);
-                  }}
-                  className={`text-start w-full py-2 px-4 rounded-lg text-white font-medium ${
-                    active === idx ? "bg-[#3b5bdb]" : "bg-black"
+                  onClick={() => setActive(idx)}
+                  className={`text-start cursor-pointer relative z-10 flex justify-between items-center pl-8 pr-3 py-2 w-full font-[600] text-white rounded-full text-2xl transition-all duration-300 ${
+                    active === idx ? "bg-[#3b5bdb]" : "bg-transparent"
                   }`}
                 >
-                  {industry.name}
+                  <span>{industry.name}</span>
+                  <div
+                    className={`p-4 rounded-full bg-black ${
+                      active === idx ? "visible" : "invisible"
+                    }`}
+                  >
+                    <ArrowRight />
+                  </div>
                 </button>
               ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Desktop List */}
-      <div className="hidden lg:block h-full w-full lg:w-[37%] p-10 bg-black rounded-4xl space-y-5 overflow-y-auto">
-        {industries.map((industry, idx) => (
-          <button
-            key={idx}
-            onClick={() => setActive(idx)}
-            className={`text-start cursor-pointer relative z-10 flex justify-between items-center pl-8 pr-3 py-2 w-full font-[600] text-white rounded-full text-2xl transition-all duration-300 ${
-              active === idx ? "bg-[#3b5bdb]" : "bg-transparent"
-            }`}
-          >
-            <span>{industry.name}</span>
-            <div
-              className={`p-4 rounded-full bg-black ${
-                active === idx ? "visible" : "invisible"
-              }`}
-            >
-              <ArrowRight />
             </div>
-          </button>
-        ))}
-      </div>
-    </div>
-
+          </div>
           {/* Right Content Panel */}
           <div className="lg:absolute top-0 right-0 h-full w-full py-10 px-3 lg:py-0 lg:w-[70%] bg-slate-200 rounded-4xl flex justify-center items-center">
             <div className="max-w-3xl flex  flex-col-reverse lg:flex-row items-center gap-12 px-6">
