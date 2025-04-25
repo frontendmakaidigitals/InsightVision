@@ -1,26 +1,26 @@
 export default function WorkingProcess() {
   const steps = [
     {
-      title: "Choose A Service",
+      title: "Discover",
       description:
-        "Pick the best option that matches your needs and expectations.",
+        " We dive deep to understand your brand, audience and goals.",
       icon: "/about/customer-support.png",
     },
     {
-      title: "Define Requirements",
-      description: "Clarify your goals and share all relevant information.",
+      title: "Strategize",
+      description: "We build a custom roadmap aligned with your objectives.",
       icon: "/about/checklist.png",
     },
     {
-      title: "Request A Meeting",
+      title: "Execute",
       description:
-        "Schedule a time to walk through all steps and finalize strategy.",
+        "We bring your strategy to life with creative precision.",
       icon: "/about/calendar.png",
     },
     {
-      title: "Final Solution",
+      title: "Optimize & Scale",
       description:
-        "Get the final output aligned with your unique business needs.",
+        "We analyze, refine, and scale what works.",
       icon: "/about/checked.png",
     },
   ];

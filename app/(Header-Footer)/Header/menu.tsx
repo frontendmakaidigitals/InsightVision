@@ -126,7 +126,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                       animate={{ width: "100%" }}
                       exit={{ x: 100, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="z-10 absolute top-[90%] bg-black left-0 h-[1px]"
+                      className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
                     />
                   )}
                 <div className="inline-flex items-center">
@@ -164,7 +164,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                   <motion.div
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    className="absolute max-w-5xl z-20 top-full left-1/2 -translate-x-1/2 w-screen"
+                    className="absolute max-w-5xl z-50 top-full left-1/2 -translate-x-1/2 w-screen"
                   >
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
@@ -212,7 +212,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                             Contact us
                           </button>
                           <img
-                            src={"Navbar.png"}
+                            src={"/Navbar.png"}
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -241,7 +241,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                       animate={{ width: "100%" }}
                       exit={{ x: 100, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="z-10 absolute top-[90%] bg-black left-0 h-[1px]"
+                      className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
                     />
                   )}
                 {link.name.split("").map((char, index) => (

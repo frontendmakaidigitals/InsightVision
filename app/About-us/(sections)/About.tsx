@@ -3,7 +3,6 @@ import React from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 
 const About = () => {
-  
   return (
     <div className="relative w-full my-20">
       <div className="absolute  left-1/2 -translate-x-1/2 size-[400px] opacity-[.5] top-0 bg-gradient-to-r from-pink-300 to-blue-100 rounded-full blur-[80px] z-10" />
@@ -14,13 +13,13 @@ const About = () => {
             About us
           </p>
           <h1 className="text-3xl mt-4 lg:text-4xl xl:text-6xl font-Plus-Jakarta-Sans text-indigo-950">
-            We&apos;`re Strategic Digital Marketing Agency
+            We&apos;re a Strategic Digital Marketing Agency
           </h1>
           <p className="mt-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            tenetur ut eius error accusantium iure at rem adipisci quae ipsum
-            fugit aperiam unde laboriosam amet animi, maiores voluptatem nulla
-            placeat?
+            We’re not just another digital agency—we’re your growth partner. By
+            blending data, creativity, and strategy, we build tailored marketing
+            solutions that drive real business results. Whether it’s scaling
+            your brand or boosting conversions, we make every click count.
           </p>
 
           <div className="grid border-b border-t border-slate-300 py-6 grid-cols-2 gap-3 mt-8">
@@ -32,8 +31,8 @@ const About = () => {
               </div>
               <div>
                 {" "}
-                <p className="text-xl font-DM-Sans font-[600]">94%</p>
-                <p>Unparalleled Growth</p>
+                <p className="text-xl font-DM-Sans font-[600]">85%</p>
+                <p>Boost in ROI</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -44,8 +43,8 @@ const About = () => {
               </div>
               <div>
                 {" "}
-                <p className="text-xl font-DM-Sans font-[600]">Upto 20%</p>
-                <p>More savings</p>
+                <p className="text-xl font-DM-Sans font-[600]">3x</p>
+                <p>Faster Conversions</p>
               </div>
             </div>
           </div>
@@ -62,7 +61,6 @@ const About = () => {
             className="w-full h-full object-contain"
           />
         </div>
-        
       </div>
     </div>
   );

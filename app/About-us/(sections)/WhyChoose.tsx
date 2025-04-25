@@ -4,21 +4,21 @@ import { ArrowUpRight, Sparkle } from "@phosphor-icons/react";
 const WhyChoose = () => {
   const benefits = [
     {
-      title: "Website Optimization",
+      title: "Our Vision",
       icon: "/about/cards/icon-3.png", // Add icon component or path here
-      desc: "Improve site speed, SEO, and user experience to convert more visitors into customers.",
+      desc: "To help brands grow by using smart and creative marketing ideas.",
       class: "",
     },
     {
-      title: "Targeted Ad Campaigns",
+      title: "Our Mission",
       icon: "/about/cards/icon-1.png", // Add icon component or path here
-      desc: "Reach your ideal audience through data-driven campaigns across Google, Meta, and more.",
+      desc: "To give businesses clear and effective strategies that bring real results.",
       class: "mt-8",
     },
     {
-      title: "Social Media",
+      title: "Our Essence",
       icon: "/about/cards/icon-2.png", // Add icon component or path here
-      desc: "Engage your audience and grow your brand with consistent, high-quality content.",
+      desc: " We combine strong ideas and real insights to make brands stand out.",
       class: "mt-16",
     },
   ];
@@ -33,16 +33,15 @@ const WhyChoose = () => {
             Why Choose Us
           </h1>
           <p className="mt-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            tenetur ut eius error accusantium iure at rem adipisci quae ipsum
-            fugit aperiam unde laboriosam amet animi, maiores voluptatem nulla
-            placeat?
+            We&apos;re not just marketers—we&apos;re strategic partners in your
+            growth journey. With a blend of creativity, data, and
+            performance-driven thinking, we craft campaigns that don’t just look
+            good—they deliver real results.
             <br />
             <br />
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            tenetur ut eius error accusantium iure at rem adipisci quae ipsum
-            fugit aperiam unde laboriosam amet animi, maiores voluptatem nulla
-            placeat?
+            From startups to established brands, we help businesses thrive in
+            the digital space with precision, passion, and purpose.
+            <br />
           </p>
 
           <div className="flex border-b pb-6 justify-start gap-12 mt-10">
@@ -105,11 +104,11 @@ const WhyChoose = () => {
             className="text-3xl absolute top-[150%] left-1/2 -transltate-x-1/2 "
           />
           <h2 className="text-2xl xl:text-4xl font-Plus-Jakarta-Sans font-[600]">
-            Our services solve any business problem
+            What Drives Us
           </h2>
           <p className="text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            similique excepturi commodi blanditiis maiores veritatis non.
+            We&apos;re driven by the goal to help brands grow with smart ideas and
+            real results.
           </p>
         </div>
         <div className="container max-w-6xl flex justify-center items-start gap-5">
