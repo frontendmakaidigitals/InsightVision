@@ -20,9 +20,9 @@ const AboutUs = () => {
     },
   ];
   return (
-    <div className="pt-14 mt-32 bg-gray-200">
-      <div className="grid grid-cols-2 gap-6 container ">
-        <div className="h-[300px] relative lg:h-[500px] ">
+    <div className="pt-14 pb-14 lg:pb-0 mt-32 bg-gray-200">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 container ">
+        <div className="h-[200px] relative lg:h-[500px] ">
           <div className="absolute overflow-hidden w-full h-[300px] lg:h-[600px] bg-slate-50 -top-32 left-0">
             <img
               className="w-full h-full object-cover"

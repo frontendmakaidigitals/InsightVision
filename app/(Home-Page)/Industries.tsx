@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowRight, CheckCircle } from "@phosphor-icons/react";
+import { motion, AnimatePresence } from "framer-motion";
 const Industries = () => {
   const industries = [
     {
@@ -77,6 +78,7 @@ const Industries = () => {
     },
   ];
   const [active, setActive] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="bg-slate-50 py-20  mt-7">
       <div className="container space-y-16">
@@ -96,34 +98,76 @@ const Industries = () => {
         </div>
 
         {/* Interactive Industry Section */}
-        <div className="relative">
+        <div className="relative ">
           {/* Left Buttons */}
           <div>
-            <div className="h-full w-[37%] p-10 bg-black rounded-4xl space-y-5 overflow-y-auto">
+      {/* Mobile Dropdown */}
+      <div className="lg:hidden px-4 py-6">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full bg-black text-white font-semibold py-3 px-5 rounded-full flex justify-between items-center"
+        >
+          <span>{industries[active]?.name}</span>
+          <ArrowRight
+            className={`transition-transform duration-300 ${isOpen ? "rotate-90" : ""}`}
+          />
+        </button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              key="dropdown"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden mt-3 space-y-2"
+            >
               {industries.map((industry, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setActive(idx)}
-                  className={`text-start cursor-pointer relative z-10 flex justify-between items-center pl-8 pr-3 py-2 w-full font-[600] text-white rounded-full text-2xl transition-all duration-300 ${
-                    active === idx ? "bg-[#3b5bdb]" : "bg-transparent"
+                  onClick={() => {
+                    setActive(idx);
+                    setIsOpen(false);
+                  }}
+                  className={`text-start w-full py-2 px-4 rounded-lg text-white font-medium ${
+                    active === idx ? "bg-[#3b5bdb]" : "bg-black"
                   }`}
                 >
-                  <span>{industry.name}</span>
-                  <div
-                    className={`p-4  rounded-full bg-black ${
-                      active === idx ? "visible" : "invisible"
-                    }`}
-                  >
-                    <ArrowRight />
-                  </div>
+                  {industry.name}
                 </button>
               ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Desktop List */}
+      <div className="hidden lg:block h-full w-full lg:w-[37%] p-10 bg-black rounded-4xl space-y-5 overflow-y-auto">
+        {industries.map((industry, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActive(idx)}
+            className={`text-start cursor-pointer relative z-10 flex justify-between items-center pl-8 pr-3 py-2 w-full font-[600] text-white rounded-full text-2xl transition-all duration-300 ${
+              active === idx ? "bg-[#3b5bdb]" : "bg-transparent"
+            }`}
+          >
+            <span>{industry.name}</span>
+            <div
+              className={`p-4 rounded-full bg-black ${
+                active === idx ? "visible" : "invisible"
+              }`}
+            >
+              <ArrowRight />
             </div>
-          </div>
+          </button>
+        ))}
+      </div>
+    </div>
 
           {/* Right Content Panel */}
-          <div className="absolute top-0 right-0 h-full w-[70%] bg-slate-200 rounded-4xl flex justify-center items-center">
-            <div className="max-w-3xl flex flex-col lg:flex-row items-center gap-12 px-6">
+          <div className="lg:absolute top-0 right-0 h-full w-full py-10 px-3 lg:py-0 lg:w-[70%] bg-slate-200 rounded-4xl flex justify-center items-center">
+            <div className="max-w-3xl flex  flex-col-reverse lg:flex-row items-center gap-12 px-6">
               <div className="flex-1 space-y-5">
                 <p className="text-lg font-[600] font-Plus-Jakarta-Sans">
                   {industries[active].text}
@@ -144,7 +188,7 @@ const Industries = () => {
                 </button>
               </div>
               <div>
-                <div className="rounded-4xl h-[400px] overflow-hidden w-[300px] bg-slate-50">
+                <div className="rounded-4xl h-[250px] lg:h-[400px] overflow-hidden w-[300px] bg-slate-50">
                   <img
                     src={industries[active].image}
                     className="w-full h-full object-cover"

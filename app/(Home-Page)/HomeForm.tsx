@@ -14,7 +14,7 @@ const HomeForm = () => {
 
   return (
     <div className="bg-white py-20">
-      <div className="container h-full gap-5 grid grid-cols-[.8fr_1.2fr]">
+      <div className="container h-full gap-5 grid grid-cols-1 lg:grid-cols-[.8fr_1.2fr]">
         <div className="bg-[#0e2147] text-indigo-200 py-8 px-8 flex flex-col justify-between items-start rounded-2xl w-full h-full">
           <div>
             <h3 className="text-purple-50 font-Plus-Jakarta-Sans font-[600] text-xl">
@@ -61,7 +61,7 @@ const HomeForm = () => {
             Get Your <span className="text-indigo-700">Free Quote</span> Today!
           </h2>
 
-          <div className="grid grid-cols-2 gap-4 mt-7">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-7">
             <div>
               <label className="font-DM-Sans text-lg font-[600]">
                 Full Name <span className="text-red-600">*</span>

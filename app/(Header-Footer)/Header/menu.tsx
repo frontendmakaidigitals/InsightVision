@@ -93,7 +93,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
     },
   ];
   return (
-    <div className="flex items-center gap-12">
+    <div className="lg:flex items-center gap-12 hidden">
       <AnimatePresence mode="wait">
         {links.map((link, idx) =>
           link.name.toLowerCase() === "services" ? (

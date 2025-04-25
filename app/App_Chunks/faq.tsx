@@ -17,7 +17,7 @@ export function AccordionDemo() {
           Question? <span className="text-indigo-700">Look here.</span>
         </h1>
 
-        <div className="grid grid-cols-[1.5fr_0.5fr] gap-5 mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.5fr] gap-5 mt-10">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -41,7 +41,7 @@ export function AccordionDemo() {
             </AccordionItem>
           </Accordion>
 
-          <div className="grid grid-cols-1 gap-y-3">
+          <div className="grid grid-cols-1 mt-10 lg:mt-0 gap-y-3">
             <div className="bg-[#0e2147] p-4 rounded-lg">
               <div className="flex w-full justify-center">
                 <ChatDots weight="fill" className="text-slate-50 text-5xl" />

@@ -18,7 +18,7 @@ const Header = () => {
           <Logo src={"/Logo/Logo.png"} />
         </div>
         <Menu links={links} />
-        <div className="relative inline-block">
+        <div className="relative hidden lg:inline-block">
           {/* Glow and Button Container (same size) */}
           <div className="relative w-28">
             {/* Glow Layer */}
