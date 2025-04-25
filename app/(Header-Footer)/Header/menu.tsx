@@ -44,7 +44,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       name: "App Development",
       img: "service-logo/app-development.png",
       gradient: "bg-gradient-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]",
-      link: "App-Development",
+      link: "App-development",
       desc: "Creating intuitive, high-performance mobile apps.",
     },
     {
@@ -52,7 +52,7 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
       img: "service-logo/social-media.png",
       gradient:
         "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-[#f72464] via-[#ff858a] to-[#fff3a7]",
-      link: "Social-Media-Marketing",
+      link: "Social-media-marketing",
       desc: "Smart social strategies that boost visibility and impact.",
     },
     {

@@ -40,7 +40,7 @@ const HeroSection = ({
       >
         <img src={"/Web-developement/heroBlur.svg"} className="w-full opacity-[.4] h-full object-cover" />
       </div>
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="container grid grid-cols-1 place-items-center lg:grid-cols-2 gap-10">
         <div className="order-2 lg:order-1">
           <h1 className="text-3xl lg:text-6xl font-DM-Sans font-[600]">
             {ColorText(title)}

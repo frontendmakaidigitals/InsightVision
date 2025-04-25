@@ -43,7 +43,7 @@ const Services = ({
   return (
     <div className="bg-white mt-20 py-20">
       <div className="container">
-        <h1 className="text-3xl font-[600] lg:text-5xl font-Plus-Jakarta-Sans">
+        <h1 className="text-3xl font-[600] max-w-2xl lg:text-5xl font-Plus-Jakarta-Sans">
           {ColorText(heading)}
         </h1>
 
