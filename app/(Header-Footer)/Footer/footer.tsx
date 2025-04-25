@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="container  grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-10">
           <div className="">
             <motion.div>
-              <Logo src={"Logo/Logo-white.png"} />
+              <Logo src={"/Logo/Logo-white.png"} />
             </motion.div>
             <motion.p
               className={`text-indigo-200 w-full lg:max-w-[300px] text-md lg:text-md  font-Satoshi mt-2 lg:mt-4`}
