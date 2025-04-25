@@ -7,7 +7,7 @@ const About = () => {
     <div className="relative w-full my-20">
       <div className="absolute  left-1/2 -translate-x-1/2 size-[400px] opacity-[.5] top-0 bg-gradient-to-r from-pink-300 to-blue-100 rounded-full blur-[80px] z-10" />
 
-      <div className=" container grid grid-cols-2 gap-10 place-items-center  relative z-20">
+      <div className=" container grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center  relative z-20">
         <div>
           <p className="text-sm font-Plus-Jakarta-Sans font-[600] text-blue-600">
             About us
@@ -55,7 +55,7 @@ const About = () => {
             <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
           </button>
         </div>
-        <div className="h-[550px]  ">
+        <div className="h-[300px] lg:h-[550px]">
           <img
             src={"https://edirectsys.com/assets/homepage-assets/model-img.png"}
             className="w-full h-full object-contain"

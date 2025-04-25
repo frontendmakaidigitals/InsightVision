@@ -13,23 +13,23 @@ const WhyChoose = () => {
       title: "Our Mission",
       icon: "/about/cards/icon-1.png", // Add icon component or path here
       desc: "To give businesses clear and effective strategies that bring real results.",
-      class: "mt-8",
+      class: "mt-0 lg:mt-8",
     },
     {
       title: "Our Essence",
       icon: "/about/cards/icon-2.png", // Add icon component or path here
       desc: " We combine strong ideas and real insights to make brands stand out.",
-      class: "mt-16",
+      class: "mt-0 lg:mt-16",
     },
   ];
   return (
     <div className="relative  w-full py-20">
-      <div className=" container grid grid-cols-2 gap-10 relative z-20">
-        <div>
+      <div className=" container grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-20">
+        <div className="order-2 lg:order-1">
           <p className="text-sm font-Plus-Jakarta-Sans font-[600] text-blue-600">
             Why choose us
           </p>
-          <h1 className="text-2xl mt-6 lg:text-3xl xl:text-5xl font-[600] font-Plus-Jakarta-Sans text-indigo-950">
+          <h1 className="text-3xl mt-6 lg:text-3xl xl:text-5xl font-[600] font-Plus-Jakarta-Sans text-indigo-950">
             Why Choose Us
           </h1>
           <p className="mt-8">
@@ -79,7 +79,7 @@ const WhyChoose = () => {
             <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
           </button>
         </div>
-        <div className="h-[500px] relative">
+        <div className="h-[300px] order-1 lg:order-2 lg:h-[500px] relative">
           <img
             src={
               "https://jthemes.net/themes/html/growim/assets/images/shapes/why-choose-3-bg.png"
@@ -98,12 +98,12 @@ const WhyChoose = () => {
         <div
           className={`absolute -top-10 left-0 -z-10 size-[350px] bg-Palette-40 blur-[150px] rounded-full`}
         />
-        <div className="relative z-20 grid grid-cols-2 items-center container max-w-6xl mb-20 gap-4">
+        <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 items-center container max-w-6xl mb-20 gap-4">
           <Sparkle
             weight="fill"
-            className="text-3xl absolute top-[150%] left-1/2 -transltate-x-1/2 "
+            className="text-3xl absolute top-[135%] lg:top-[150%] left-1/2 -transltate-x-1/2 "
           />
-          <h2 className="text-2xl xl:text-4xl font-Plus-Jakarta-Sans font-[600]">
+          <h2 className="text-3xl xl:text-4xl font-Plus-Jakarta-Sans font-[600]">
             What Drives Us
           </h2>
           <p className="text-lg">
@@ -111,7 +111,7 @@ const WhyChoose = () => {
             real results.
           </p>
         </div>
-        <div className="container max-w-6xl flex justify-center items-start gap-5">
+        <div className="container max-w-6xl flex-col lg:flex-row flex justify-center items-start gap-5">
           {benefits.map((item, idx) => (
             <div
               className={`w-full p-7 bg-white rounded-3xl shadow-md ${item.class}`}
