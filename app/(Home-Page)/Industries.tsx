@@ -89,7 +89,7 @@ const Industries = () => {
               Industries
             </p>
             <h1 className="text-3xl mt-2 mb-2 lg:text-6xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
-              Awesome services from Industrial company
+              <span className="text-indigo-600">Marketing Expertise</span> Across All Industries
             </h1>
             <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-black hover:bg-slate-800 text-slate-50">
               Contact us <ArrowRight className="inline-block size-6" />
