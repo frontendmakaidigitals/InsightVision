@@ -20,77 +20,77 @@ const Page = () => {
       title: "Brand Photography",
       description:
         " Professional photos that showcase your brand’s story, products, people, and values. ",
-      img: "https://images.unsplash.com/photo-1650636353551-1275516077b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1647907474660-a2ea7a000744?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:col-span-2",
     },
     {
       title: "  Product Photography",
       description:
         "   High-quality product shots that highlight every detail and drive more sales.",
-      img: "https://images.unsplash.com/photo-1602576666092-bf6447a729fc?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1695073621086-aa692bc32a3d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:col-span-1",
     },
     {
       title: "Event Photography",
       description:
         "  Capture key moments at launches, conferences, and corporate events with natural, powerful imagery.",
-      img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1614607653708-0777e6d003b8?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:",
     },
     {
       title: "Corporate Videos",
       description:
         "Professional brand videos that tell your company’s story and build credibility. ",
-      img: "https://images.unsplash.com/photo-1657868203197-627e5ab86e19?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1654723011673-86b0eae447a8?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:",
     },
     {
       title: " Social Media Content",
       description:
         "  Short-form videos and creative reels are designed to boost your engagement on Instagram, TikTok, and more.",
-      img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1472393365320-db77a5abbecc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:",
     },
     {
       title: "Promotional Videos ",
       description:
         " High-impact videos to promote products, services, or special campaigns. ",
-      img: "https://images.unsplash.com/photo-1642261366979-704a073bef4b?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1664277497086-e21115efbbf4?q=80&w=2963&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:",
     },
     {
       title: "Editing & Post-Production",
       description:
         " Full editing services to deliver polished, professional photos and videos ready for any platform. ",
-      img: "https://images.unsplash.com/photo-1691073112675-9685bc6779bf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1627244714766-94dab62ed964?q=80&w=3165&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:col-span-2",
     },
   ];
   const accordionData = [
     {
-      title: "How long does it take to see results from SEO?",
+      title: "Do you provide video and photo editing services?",
       description:
-        "SEO is a long-term investment. While some improvements can be seen within the first few months, significant results often take 6-12 months, depending on your industry, competition, and strategy.",
+        "Yes! All of our photography and videography services include professional editing. For photos, this may involve color correction, retouching, cropping, and background removal. For videos, it includes cutting, transitions, sound editing, color grading, and adding any necessary effects or graphics.",
     },
     {
-      title: "What is the difference between on-page and off-page SEO?",
+      title: "Can I request specific styles or themes for my photos or videos?",
       description:
-        "On-page SEO involves optimizing elements on your website, such as content, meta tags, and internal links. Off-page SEO focuses on external factors like backlinks and social signals that influence your site’s authority.",
+        "Absolutely! We work closely with you to understand your vision, brand, and desired aesthetic.",
     },
     {
-      title: "What are keywords and why are they important?",
+      title: "Do you provide drone services for video or photography?",
       description:
-        "Keywords are terms people search for online. Targeting the right keywords ensures your website attracts relevant traffic and meets the needs of your audience.",
+        "Yes! We offer professional drone services for both photography and videography.",
     },
     {
-      title: "How do you measure the success of an SEO campaign?",
+      title: "Do you offer services for businesses with small budgets?",
       description:
-        "Success is measured through key performance indicators (KPIs) such as organic traffic, keyword rankings, conversion rates, and ROI. We provide detailed reports to track your progress.",
+        "Yes, we understand that every business has different needs and budgets. We offer flexible packages that can be tailored to suit various budgets without compromising on quality.",
     },
     {
-      title: "What is SEO and why is it important?",
+      title: "Will you provide a consultation before the shoot?",
       description:
-        "SEO (Search Engine Optimization) is the practice of optimizing your website to rank higher in search engine results. It drives organic traffic, increases visibility, and enhances user experience, ultimately boosting conversions and revenue.",
+        "Yes! Before every shoot, we offer a consultation to discuss your objectives, the look and feel you want to achieve, and any specific details you want to include.",
     },
   ];
   return (
@@ -100,10 +100,10 @@ const Page = () => {
         title={"Capture Your Brand’s Stories"}
         description={desc}
         img={
-          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "https://images.unsplash.com/photo-1704655318412-91c859b25632?q=80&w=3173&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       />
-      <TechStackIcon icons={icons} />
+
       <Services
         arr={seoServices}
         highlightText={"Visual Services"}

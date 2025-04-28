@@ -20,49 +20,49 @@ const Page = () => {
       title: "On-Page SEO",
       description:
         "  We optimize your website’s content, structure, and keywords to improve search engine rankings. ",
-      img: "https://images.unsplash.com/photo-1650636353551-1275516077b6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://images.unsplash.com/photo-1657727534668-4104c475b292?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       class: "col-span-1 lg:col-span-2",
     },
     {
       title: " Technical SEO ",
       description:
-        "   We fix backend issues—like site speed, mobile-friendliness, and crawlability—to boost your site's performance. ",
-      img: "https://images.unsplash.com/photo-1602576666092-bf6447a729fc?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        " We fix backend issues—like site speed, mobile-friendliness, and crawlability—to boost your site's performance. ",
+      img: "https://vitaldesign.com/wp-content/uploads/2021/06/vital-design-image-optimization-seo-818x596.jpg",
       class: "col-span-1 lg:col-span-1",
     },
     {
       title: "Keyword Research & Strategy",
       description:
         " We find the best keywords your audience is searching for and create a strategy to rank for them.",
-      img: "https://images.unsplash.com/photo-1623282033815-40b05d96c903?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhxnwfMJXgxVrkzOTRKyZfY5H7KQvFvt_9w&s",
       class: "col-span-1 lg:",
     },
     {
       title: "Content Optimization",
       description:
         "  We refine existing content and create new SEO-friendly pages to help you rank and convert. ",
-      img: "https://images.unsplash.com/photo-1657868203197-627e5ab86e19?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFD6DPLoJCfB5X6rEL88_FhU98aUVsFHARaQ&s",
       class: "col-span-1 lg:",
     },
     {
       title: " Local SEO ",
       description:
         "   We help local businesses appear in local search results and Google Maps with accurate listings and reviews. ",
-      img: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://d317jr06u12xtj.cloudfront.net/2022/05/benefits-of-local-seo-Twitter.png",
       class: "col-span-1 lg:",
     },
     {
       title: " Link Building ",
       description:
         "  We build high-quality backlinks that improve your domain authority and search engine trust. ",
-      img: "https://images.unsplash.com/photo-1642261366979-704a073bef4b?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://static.semrush.com/blog/uploads/media/d1/d2/d1d2c74edfb2e8d33ef3085a1bc25950/link-building.svg",
       class: "col-span-1 lg:",
     },
     {
       title: " SEO Audits & Reporting ",
       description:
         "  We provide in-depth SEO audits and clear monthly reports so you can track progress and results. ",
-      img: "https://images.unsplash.com/photo-1691073112675-9685bc6779bf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "https://cdn.prod.website-files.com/60ef088dd8fef99352abb434/6514960f756f68f7c6f8ea9d_How%20To%20Perform%20a%20Complete%20SEO%20Audit%20-100.webp",
       class: "col-span-1 lg:col-span-2",
     },
   ];
@@ -100,10 +100,9 @@ const Page = () => {
         title={"Get Found Online with Smart SEO Strategies"}
         description={desc}
         img={
-          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "https://www.creativefuture.org/wp-content/uploads/2017/02/image002-1-e1487855274510.jpg"
         }
       />
-      <TechStackIcon icons={icons} />
       <Services
         arr={seoServices}
         highlightText={"Visibility with SEO"}
