@@ -109,8 +109,7 @@ const Footer = () => {
                 Address
               </motion.p>
               <p className="text-sm text-indigo-200 lg:text-md">
-                <span>Office</span> - 3307, Churchill Towers, Business Bay,
-                Dubai, UAE
+                <span>Office</span> - 1701, Churchill Towers, Business Bay, Dubai, UAE
               </p>
               <p className="mt-2 text-sm text-indigo-200 lg:text-md">
                 <span>Phone</span>- +971 50 865 4179
