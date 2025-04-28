@@ -3,7 +3,7 @@ import Logo from "@/app/App_Chunks/Logo";
 import React from "react";
 import Menu from "./menu";
 import { motion } from "motion/react";
-
+import MobileMenu from "./mobileMenu";
 const Header = () => {
   const links = [
     { name: "Home", link: "/" },
@@ -12,12 +12,13 @@ const Header = () => {
     { name: "Contact", link: "/Contact" },
   ];
   return (
-    <div className=" py-2">
+    <div className=" py-2 HeadNavigation">
       <div className="container justify-between flex items-center">
         <div className="w-32 ">
           <Logo src={"/Logo/Logo.png"} />
         </div>
         <Menu links={links} />
+        <MobileMenu />
         <div className="relative hidden lg:inline-block">
           {/* Glow and Button Container (same size) */}
           <div className="relative w-28">
