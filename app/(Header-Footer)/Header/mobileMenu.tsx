@@ -215,7 +215,7 @@ const MobileMenu = ({}) => {
                           <div className="pl-3">
                             {menui.map((subItem, subIndex) => (
                               <Link
-                                href={subItem.link}
+                                href={`/Service/${subItem.link}`}
                                 key={subIndex}
                                 onClick={handleLinkClick}
                                 className="block mt-4 text-2xl capitalize font-Grostek font-medium"
