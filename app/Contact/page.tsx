@@ -83,7 +83,7 @@ const Page = () => {
           perspiciatis aut neque laudantium!
         </p>
       </div>
-      <div className="container relative z-10 max-w-5xl grid grid-cols-[.8fr_1.2fr] gap-12 ">
+      <div className="container relative z-10 max-w-5xl grid-cols-1 grid lg:grid-cols-[.8fr_1.2fr] gap-12 ">
         <div className="w-full bg-gradient-to-b from-Palette-10 from-[5%] to-[#dfd6ff]  rounded-2xl px-9 py-12">
           <h2 className="text-xl font-DM-Sans tracking-tight text-white font-[600]">
             Get in touch
@@ -96,7 +96,7 @@ const Page = () => {
               Come say hello at our Office HQ.
             </p>
             <p className="text-sm text-slate-50 mt-1">
-              Office - 3307, Churchill Towers, Business Bay, Dubai, UAE
+            Office - 1701, Churchill Towers, Business Bay, Dubai, UAE
             </p>
           </div>
           <div className="mt-8">
@@ -131,7 +131,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="w-full grid grid-cols-2 gap-x-7 gap-y-8 ">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-7 gap-y-8 ">
           <Form />
         </div>
       </div>
