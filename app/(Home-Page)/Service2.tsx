@@ -1,20 +1,20 @@
-
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { ArrowRight } from "@phosphor-icons/react";
+import Link from "next/link";
 const Service2 = () => {
   const services = [
     {
       name: "Web Development",
       img: "service-logo/web-development.png",
       gradient: "bg-gradient-to-r from-[#fde68a] to-[#f59e0b] ",
-      link: "Web-Development",
+      link: "Web-development",
       desc: "From concept to code, we build your digital presence.",
     },
     {
       name: "App Development",
       img: "service-logo/app-development.png",
       gradient: "bg-gradient-to-r from-[#fef08a] via-[#84cc16] to-[#16a34a]",
-      link: "App-Development",
+      link: "App-development",
       desc: "Creating intuitive, high-performance mobile apps.",
     },
     {
@@ -22,7 +22,7 @@ const Service2 = () => {
       img: "service-logo/social-media.png",
       gradient:
         "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-[#f72464] via-[#ff858a] to-[#fff3a7]",
-      link: "Social-Media-Marketing",
+      link: "Social-media-marketing",
       desc: "Smart social strategies that boost visibility and impact.",
     },
     {
@@ -73,9 +73,11 @@ const Service2 = () => {
           <h1 className="text-3xl mt-2 mb-2 lg:text-6xl max-w-2xl font-Plus-Jakarta-Sans font-[600]">
             Data-Driven, Expert Digital Marketing Solutions
           </h1>
-          <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-black hover:bg-slate-800 text-slate-50">
-            Contact us <ArrowRight className="inline-block size-6" />
-          </button>
+          <Link href={"/Contact"}>
+            <button className="px-6 mt-4 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-black hover:bg-slate-800 text-slate-50">
+              Contact us <ArrowRight className="inline-block size-6" />
+            </button>
+          </Link>
         </div>
         <div className="grid mt-14 xl:grid-cols-4 gap-7">
           {services.map((service, idx) => (
@@ -95,10 +97,12 @@ const Service2 = () => {
                 </h3>
                 <p className="mt-4 text-slate-800">{service.desc}</p>
               </div>
-              <button className="mt-8 underline underline-offset-4 decoration-2 decoration-purple-800 font-bold rounded-full text-[#11002e]">
-                Learn more{" "}
-                <ArrowUpRight className="ml-1 text-lg inline-block" />
-              </button>
+              <Link href={`/Service/${service.link}`}>
+                <button className="mt-8 cursor-pointer underline underline-offset-4 decoration-2 decoration-purple-800 font-bold rounded-full text-[#11002e]">
+                  Learn more{" "}
+                  <ArrowUpRight className="ml-1 text-lg inline-block" />
+                </button>
+              </Link>
             </div>
           ))}
         </div>

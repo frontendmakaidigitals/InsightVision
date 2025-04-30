@@ -21,7 +21,7 @@ const HomeForm = () => {
               Address
             </h3>
             <p className="mt-2 max-w-xs text-lg">
-              3307, Churchill Towers, Business Bay, Dubai, UAE
+              Office - 1701, Churchill Towers, Business Bay, Dubai, UAE
             </p>
           </div>
           <div>
@@ -56,7 +56,7 @@ const HomeForm = () => {
           </div>
         </div>
         <div className="py-4">
-        <p className="text-[#bb9bfc] font-[600]">Contact us</p>
+          <p className="text-[#bb9bfc] font-[600]">Contact us</p>
           <h2 className="text-2xl font-DM-Sans font-[600] mt-1 lg:text-4xl">
             Get Your <span className="text-indigo-700">Free Quote</span> Today!
           </h2>
@@ -95,7 +95,7 @@ const HomeForm = () => {
                 Service <span className="text-red-600">*</span>
               </label>
               <input
-                placeholder="Enter your email"
+                placeholder="Enter your service"
                 className="w-full px-4 py-[.7rem] mt-1  text-md bg-slate-100 rounded-lg"
               />
             </div>

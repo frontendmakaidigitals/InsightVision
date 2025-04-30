@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRight } from "@phosphor-icons/react";
 import React from "react";
-
+import Link from "next/link";
 const Experience = () => {
   const stats = [
     { number: "14+", name: "Projects" },
@@ -41,9 +41,11 @@ const Experience = () => {
             <div className="flex flex-col justify-center items-center">
               <p className="text-5xl font-DM-Sans font-[600]">1000+</p>
               <p className="mt-0 font-DM-Sans font-[600]">Followers</p>
-              <button className="bg-black mt-3  text-indigo-50 px-5 py-2 rounded-2xl">
-                Contact us <ArrowRight className="inline-block" />
-              </button>
+              <Link href={'/Contact'}>
+                <button className="bg-black mt-3 cursor-pointer text-indigo-50 px-5 py-2 rounded-2xl">
+                  Contact us <ArrowRight className="inline-block" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

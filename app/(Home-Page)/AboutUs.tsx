@@ -1,5 +1,6 @@
 import React from "react";
 import { TrendingUp, Sparkles, ClipboardList, Headset } from "lucide-react";
+import Link from "next/link";
 const AboutUs = () => {
   const benefits = [
     {
@@ -57,9 +58,11 @@ const AboutUs = () => {
             ))}
           </ul>
 
-          <button className="px-6 mt-7 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-indigo-800 hover:bg-indigo-950 text-slate-50">
-            Get started
-          </button>
+          <Link href='/Contact'>
+            <button className="px-6 mt-7 font-Plus-Jakarta-Sans cursor-pointer font-[700] rounded-full py-3 bg-indigo-800 hover:bg-indigo-950 text-slate-50">
+              Get started
+            </button>
+          </Link>
         </div>
       </div>
     </div>

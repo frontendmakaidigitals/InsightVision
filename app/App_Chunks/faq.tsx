@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { PhoneCall, ChatDots } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export function AccordionDemo({
   accData,
@@ -42,9 +43,11 @@ export function AccordionDemo({
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
               <div className="flex justify-center mt-3">
-                <button className="px-4 text-xs py-2 cursor-pointer bg-indigo-500 font-[600] font-Plus-Jakarta-Sans text-slate-50 rounded-full">
-                  Contact us
-                </button>
+                <Link href={"/Contact"}>
+                  <button className="px-4 text-xs py-2 cursor-pointer bg-indigo-500 font-[600] font-Plus-Jakarta-Sans text-slate-50 rounded-full">
+                    Contact us
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="flex gap-4 bg-white rounded-lg items-center p-4">

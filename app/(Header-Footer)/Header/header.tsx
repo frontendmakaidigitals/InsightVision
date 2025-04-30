@@ -4,6 +4,7 @@ import React from "react";
 import Menu from "./menu";
 import { motion } from "motion/react";
 import MobileMenu from "./mobileMenu";
+import { useRouter } from "next/navigation";
 const Header = () => {
   const links = [
     { name: "Home", link: "/" },
@@ -11,6 +12,7 @@ const Header = () => {
     { name: "Services", link: "" },
     { name: "Contact", link: "/Contact" },
   ];
+  const router = useRouter()
   return (
     <div className=" py-2 HeadNavigation">
       <div className="container justify-between flex items-center">
@@ -32,10 +34,11 @@ const Header = () => {
 
             {/* Button Layer */}
             <motion.button
+              onClick={() => router.push('/Contact') }
               whileHover={{ scale: 1.05 }}
               className="relative z-10 w-full rounded-lg bg-black text-sm px-5 py-2 cursor-pointer text-slate-300 font-Plus-Jakarta-Sans font-semibold shadow-md"
             >
-              Let’s talk
+              Let&apos;s talk
             </motion.button>
           </div>
         </div>

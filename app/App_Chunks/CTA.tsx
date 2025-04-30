@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const CTA = () => {
   return (
     <div className="mb-16 mt-16">
@@ -20,9 +20,11 @@ const CTA = () => {
             animi, illum, voluptatem magni reprehenderit{" "}
           </p>
           <div className="flex justify-center items-center">
-            <button className="mt-5 px-6 py-2 font-[600] hover:scale-[1.1] transition-all duration-200 cursor-pointerF font-Plus-Jakarta-Sans rounded-full bg-slate-100/40  backdrop-filter backdrop-blur-md text-indigo-50">
-              Contact us
-            </button>
+            <Link href="/Contact">
+              <button className="mt-5 cursor-pointer px-6 py-2 font-[600] hover:scale-[1.1] transition-all duration-200 cursor-pointerF font-Plus-Jakarta-Sans rounded-full bg-slate-100/40  backdrop-filter backdrop-blur-md text-indigo-50">
+                Contact us
+              </button>
+            </Link>
           </div>
         </div>
       </div>
