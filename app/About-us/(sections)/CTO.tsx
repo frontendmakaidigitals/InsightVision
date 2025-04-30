@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 type CTOProps = {
@@ -114,9 +115,11 @@ const CTO = ({ heading, description }: CTOProps) => {
               <p className="text-slate-100 mt-4 text-sm">{description}</p>
             </div>
             <div className="flex justify-end mt-5">
-              <button className="px-4 py-2 bg-violet-600 cursor-pointer text-slate-50 font-[600] font-Plus-Jakarta-Sans rounded-lg">
-                Contact us
-              </button>
+              <Link href="/Contact">
+                <button className="px-4 py-2 bg-violet-600 cursor-pointer text-slate-50 font-[600] font-Plus-Jakarta-Sans rounded-lg">
+                  Contact us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

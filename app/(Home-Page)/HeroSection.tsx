@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="grid grid-rows-2 gap-4">
               <img src={"Hero/budget.svg"} className=" w-[190px]" />
               <img
-                src={"Hero/Generates traffic & leads.svg"}
+                src={"Hero/Generates traffic.svg"}
                 className=" w-[190px]"
               />
             </div>

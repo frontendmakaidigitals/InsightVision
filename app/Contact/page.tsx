@@ -77,10 +77,9 @@ const Page = () => {
           Contact our team
         </h2>
         <p className="text-sm text-center mt-4 ">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, facilis
-          tenetur debitis natus perspiciatis architecto earum cumque fugit
-          dolorem nihil commodi praesentium? Quo quasi repellat deserunt,
-          perspiciatis aut neque laudantium!
+          At Insight Vision, our team is ready to assist you with any questions,
+          ideas, or support you need. Reach out to us today — we&apos;re here to
+          help turn your vision into reality.
         </p>
       </div>
       <div className="container relative z-10 max-w-5xl grid-cols-1 grid lg:grid-cols-[.8fr_1.2fr] gap-12 ">
@@ -96,7 +95,7 @@ const Page = () => {
               Come say hello at our Office HQ.
             </p>
             <p className="text-sm text-slate-50 mt-1">
-            Office - 1701, Churchill Towers, Business Bay, Dubai, UAE
+              Office - 1701, Churchill Towers, Business Bay, Dubai, UAE
             </p>
           </div>
           <div className="mt-8">

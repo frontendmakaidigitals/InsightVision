@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { ArrowUpRight, Sparkle } from "@phosphor-icons/react";
+import Link from "next/link";
 const WhyChoose = () => {
   const benefits = [
     {
@@ -72,12 +73,15 @@ const WhyChoose = () => {
               </div>
             </div>
           </div>
-          <button className="mt-7 group cursor-pointer ">
-            <span className="bg-indigo-300/20 group-hover:bg-indigo-300/50 text-indigo-800 px-5 py-2 rounded-full inline-block align-middle">
-              Contact us
-            </span>
-            <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
-          </button>
+          <Link href="/Contact">
+            {" "}
+            <button className="mt-7 group cursor-pointer ">
+              <span className="bg-indigo-300/20 group-hover:bg-indigo-300/50 text-indigo-800 px-5 py-2 rounded-full inline-block align-middle">
+                Contact us
+              </span>
+              <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
+            </button>
+          </Link>
         </div>
         <div className="h-[300px] order-1 lg:order-2 lg:h-[500px] relative">
           <img
@@ -107,8 +111,8 @@ const WhyChoose = () => {
             What Drives Us
           </h2>
           <p className="text-lg">
-            We&apos;re driven by the goal to help brands grow with smart ideas and
-            real results.
+            We&apos;re driven by the goal to help brands grow with smart ideas
+            and real results.
           </p>
         </div>
         <div className="container max-w-6xl flex-col lg:flex-row flex justify-center items-start gap-5">

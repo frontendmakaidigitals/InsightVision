@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -48,12 +49,15 @@ const About = () => {
               </div>
             </div>
           </div>
-          <button className="mt-8 group cursor-pointer ">
-            <span className="bg-indigo-300/20 group-hover:bg-indigo-300/50 text-indigo-800 px-5 py-2 rounded-full inline-block align-middle">
-              Contact us
-            </span>
-            <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
-          </button>
+          <Link href="/Contact">
+            {" "}
+            <button className="mt-8 group cursor-pointer ">
+              <span className="bg-indigo-300/20 group-hover:bg-indigo-300/50 text-indigo-800 px-5 py-2 rounded-full inline-block align-middle">
+                Contact us
+              </span>
+              <ArrowUpRight className="inline-block text-indigo-50 bg-indigo-600 group-hover:bg-indigo-500 p-2 ml-2  align-middle size-[38px] rounded-full" />
+            </button>
+          </Link>
         </div>
         <div className="h-[300px] lg:h-[550px]">
           <img

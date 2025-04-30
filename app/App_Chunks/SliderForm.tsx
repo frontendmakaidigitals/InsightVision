@@ -126,7 +126,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
           >
             <motion.div
               initial={{ x: "100%" }}
-              animate={{ x: "-2%" }}
+              animate={{ x: "0%" }}
               exit={{ x: "100%" }}
               transition={{ ease: [0.19, 1, 0.22, 1], duration: 0.7 }}
               className="w-[500px] p-6 bg-white rounded-xl"
@@ -137,7 +137,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
                   className="flex px-4 py-2 transition-colors duration-300 hover:bg-red-300 rounded-full items-center gap-2"
                   onClick={() => setIsFormOpen(false)}
                 >
-                  Close <X />
+                  Close<X />
                 </button>
               </div>
 
