@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import Header from "./(Header-Footer)/Header/header";
 import Footer from "./(Header-Footer)/Footer/footer";
+import Loading from "./App_Chunks/Loading";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} ${jakarta.variable} antialiased`}
       >
+        <Loading />
         <Header />
         {children}
         <Footer />
