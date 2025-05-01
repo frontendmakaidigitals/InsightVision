@@ -137,7 +137,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
                   className="flex px-4 py-2 transition-colors duration-300 hover:bg-red-300 rounded-full items-center gap-2"
                   onClick={() => setIsFormOpen(false)}
                 >
-                  Close<X />
+                  Close <X />
                 </button>
               </div>
 

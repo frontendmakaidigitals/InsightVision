@@ -37,10 +37,10 @@ export function AccordionDemo({
                 <ChatDots weight="fill" className="text-slate-50 text-5xl" />
               </div>
               <p className="text-center mt-2 text-slate-50 font-Plus-Jakarta-Sans font-[500] text-sm">
-                You have a different questions?
+              You have questions? 
               </p>
               <p className=" text-center mt-1 text-xs text-slate-100">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Our team is always here to assist you and ensure you have everything you need.
               </p>
               <div className="flex justify-center mt-3">
                 <Link href={"/Contact"}>

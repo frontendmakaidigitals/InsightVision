@@ -5,11 +5,24 @@ import {
   InstagramLogo,
   LinkedinLogo,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 const HomeForm = () => {
   const icons = [
-    { id: "facebook", Icon: FacebookLogo },
-    { id: "instagram", Icon: InstagramLogo },
-    { id: "linkedin", Icon: LinkedinLogo },
+    {
+      id: "facebook",
+      Icon: FacebookLogo,
+      link: "https://www.facebook.com/share/1B8MhGwsoX/?mibextid=wwXIfr",
+    },
+    {
+      id: "instagram",
+      Icon: InstagramLogo,
+      link: "https://www.instagram.com/insightvision.marketing?igsh=enp5bGcxc255MmJr",
+    },
+    {
+      id: "linkedin",
+      Icon: LinkedinLogo,
+      link: "https://www.linkedin.com/company/insight-vision-marketing/",
+    },
   ];
 
   return (
@@ -44,13 +57,15 @@ const HomeForm = () => {
               Stay Connnected
             </h3>
             <div className="flex gap-8 mt-4 justify-between w-full">
-              {icons.map(({ id, Icon }) => (
-                <div
-                  key={id}
-                  className="text-4xl size-12 p-2 bg-Palette-30 flex justify-center items-center rounded-full"
-                >
-                  <Icon weight="fill" />
-                </div>
+              {icons.map(({ id, Icon, link }) => (
+                <Link   key={id} href={link}>
+                  <div
+                  
+                    className="text-4xl size-12 p-2 bg-Palette-30 flex justify-center items-center rounded-full"
+                  >
+                    <Icon weight="fill" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
