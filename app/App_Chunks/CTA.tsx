@@ -16,8 +16,9 @@ const CTA = () => {
             Let&apos;s Explore with us
           </h2>
           <p className="text-center text-slate-100 mt-3 text-lg">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-            animi, illum, voluptatem magni reprehenderit{" "}
+            Let’s explore bold ideas, creative strategies, and growth
+            opportunities: Connect with us and let&nbsp;s build something impactful
+            together.
           </p>
           <div className="flex justify-center items-center">
             <Link href="/Contact">
