@@ -11,6 +11,7 @@ const Header = () => {
     { name: "About-us", link: "/About-us" },
     { name: "Services", link: "" },
     { name: "Contact", link: "/Contact" },
+    { name: "Portfolio", link: "/Portfolio" },
   ];
   const router = useRouter()
   return (
