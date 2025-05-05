@@ -13,12 +13,11 @@ import { usePathname } from "next/navigation";
 const Footer = () => {
   const menu = [
     { title: "home", link: "/" },
-    { title: "about", link: "/About" },
-    { title: "Social Media Marketing", link: "/Social-Media-Marketing" },
-    { title: "Performance Marketing", link: "/Performace-Marketing" },
-    { title: "Branding & Designing", link: "/Branding-&-Designing" },
-    { title: "blogs", link: "/Blogs" },
-    { title: "contact", link: "/contact" },
+    { title: "about", link: "/About-us" },
+    { title: "Social Media Marketing", link: "Service/Social-media-marketing" },
+    { title: "Performance Marketing", link: "Service/Performace-Marketing" },
+    { title: "Branding & Designing", link: "Service/Branding" },
+    { title: "contact", link: "/Contact" },
   ];
   const legal = [
     { title: "Privacy policy", link: "/" },
