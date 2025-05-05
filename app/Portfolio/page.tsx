@@ -87,7 +87,7 @@ const Page = () => {
     "Slide 5 - Property Evaluation.jpg",
     "Slide 5 - Property Management.jpg",
     "Slide 5 - Real Estate Investment.jpg",
-    "Slide 5 - Short Term & Long Term Leasing.jpg",
+    "Slide 5 - Short Term Long Term Leasing.jpg",
   ];
 
   const refs = [
