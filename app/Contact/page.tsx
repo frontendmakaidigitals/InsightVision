@@ -150,14 +150,14 @@ export default Page;
 const Form = () => {
   return (
     <>
-      <div className="w-full">
+      <div className="w-full col-span-2 lg:col-span-1">
         <label>First Name</label>
         <input
           className="text-sm mt-1 w-full border bg-[#f1f0fb] border-slate-400/40 rounded-md px-3 block py-[.7rem]"
           placeholder="First name"
         />
       </div>
-      <div className="w-full">
+      <div className="w-full col-span-2 lg:col-span-1">
         <label>Last Name</label>
         <input
           className="text-sm mt-1 w-full border bg-[#f1f0fb] border-slate-400/40 rounded-md px-3 block py-[.7rem]"
