@@ -7,7 +7,11 @@ jobs:
   build-and-deploy:
     name: Build and Deploy to Production
     runs-on: ubuntu-latest
-    steps:
+    env:
+      NEXT_PUBLIC_EMAIL_USER: frontendmakaidigitals@gmail.com 
+      NEXT_PUBLIC_EMAIL_PASS: zcmj wxys vzkh hron
+      NEXT_PUBLIC_EMAIL_TO: info@insightvision.marketing
+    steps:  
       - name: Checkout repo
         uses: actions/checkout@v3
 
