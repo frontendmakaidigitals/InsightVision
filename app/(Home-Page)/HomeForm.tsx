@@ -89,7 +89,7 @@ const HomeForm = () => {
     e.preventDefault();
     setStatus("");
     if (!validate()) {
-      console.log("return", errors);
+       
       return;
     }
     setStatus("Sending...");
@@ -111,10 +111,10 @@ const HomeForm = () => {
         }); // Reset form
         setCheckBox(false);
       } else {
-        setStatus("Failed to send email.");
+        setStatus("Failed to send email");
       }
     } catch (error) {
-      setStatus("Error sending email.");
+      setStatus("Failed to send email");
     }
   };
 
@@ -271,7 +271,8 @@ const HomeForm = () => {
             type="submit"
             className={cn(
               `border border-slate-400 w-full transition-all duration-200 hover:bg-Palette-20 hover:text-indigo-50 cursor-pointer mt-10 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
-              status === "ok" && "bg-Palette-20 text-indigo-200"
+              status === "ok" && "bg-Palette-20 text-indigo-200",
+              status === 'Failed to send email' && 'border-red-500'
             )}
             disabled={status === "Sending..." || status === "ok"}
             onClick={handleSubmit}

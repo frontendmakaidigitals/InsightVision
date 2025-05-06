@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 export async function POST(req: Request): Promise<Response> {
   try {
     const { firstName, lastName, phone, email, message } = await req.json();
-
+    
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

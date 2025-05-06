@@ -116,10 +116,10 @@ const SliderForm: React.FC<SliderFormProps> = ({
         }); // Reset form
         setCheckBox(false);
       } else {
-        setStatus("Failed to send email.");
+        setStatus("Failed to send email");
       }
     } catch (error) {
-      setStatus("Error sending email.");
+      setStatus("Failed to send email");
     }
   };
 
@@ -169,22 +169,24 @@ const SliderForm: React.FC<SliderFormProps> = ({
                     <input
                       name="firstName"
                       placeholder="Enter your full name"
-                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.firstName ? 'border border-red-500' : ''} px-5 py-3`}
+                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${
+                        errors.firstName ? "border border-red-500" : ""
+                      } px-5 py-3`}
                       value={formData.firstName}
                       onChange={handleChange}
                     />
-                   
                   </div>
                   <div className="w-full">
                     <label>Last Name</label>
                     <input
                       name="lastName"
                       placeholder="Enter your last name"
-                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.lastName ? 'border border-red-500' : ''} px-5 py-3`}
+                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${
+                        errors.lastName ? "border border-red-500" : ""
+                      } px-5 py-3`}
                       value={formData.lastName}
                       onChange={handleChange}
                     />
-                    
                   </div>
                 </div>
                 <div className="w-full">
@@ -192,33 +194,36 @@ const SliderForm: React.FC<SliderFormProps> = ({
                   <input
                     name="phone"
                     placeholder="Enter Contact number"
-                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.phone ? 'border border-red-500' : ''} px-5 py-3`}
+                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${
+                      errors.phone ? "border border-red-500" : ""
+                    } px-5 py-3`}
                     value={formData.phone}
                     onChange={handleChange}
                   />
-                  
                 </div>
                 <div className="w-full">
                   <label>Email</label>
                   <input
                     name="email"
                     placeholder="Enter your email"
-                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.email ? 'border border-red-500' : ''} px-5 py-3`}
+                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${
+                      errors.email ? "border border-red-500" : ""
+                    } px-5 py-3`}
                     value={formData.email}
                     onChange={handleChange}
                   />
-                
                 </div>
                 <div className="w-full">
                   <label>What service would you like help with?</label>
                   <textarea
                     name="message"
                     placeholder="Enter your message"
-                    className={`w-full resize-none h-32 font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 ${errors.message ? 'border border-red-500' : ''} rounded-xl px-5 py-3`}
+                    className={`w-full resize-none h-32 font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 ${
+                      errors.message ? "border border-red-500" : ""
+                    } rounded-xl px-5 py-3`}
                     value={formData.message}
                     onChange={handleChange}
                   />
-                 
                 </div>
                 <div className="flex items-center space-x-2 ">
                   <Checkbox
@@ -245,8 +250,9 @@ const SliderForm: React.FC<SliderFormProps> = ({
                 <button
                   type="submit"
                   className={cn(
-                    `border border-slate-400 w-full transition-all duration-200 hover:bg-Palette-20 hover:text-indigo-50 cursor-pointer mt-3 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
-                    status === "ok" && "bg-Palette-20 text-indigo-200"
+                    `border border-slate-400 w-full transition-all duration-200 hover:bg-Palette-20 hover:text-indigo-50 cursor-pointer mt-10 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
+                    status === "ok" && "bg-Palette-20 text-indigo-200",
+                    status === "Failed to send email" && "border-red-500"
                   )}
                   disabled={status === "Sending..." || status === "ok"}
                   onClick={handleSubmit}
