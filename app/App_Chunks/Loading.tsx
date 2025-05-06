@@ -29,7 +29,7 @@ const Loader = () => {
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
-        <div className="fixed flex justify-center items-center overflow-hidden top-0 left-0 bg-gradient-to-r from-purple-100 to-purple-300 z-[999] w-screen h-screen">
+        <div className="fixed flex justify-center items-center overflow-hidden top-0 left-0 bg-gradient-to-r from-purple-100 to-purple-300 z-[99999] w-screen h-screen">
           <div className="dot-container">
             <div className="dot"></div>
             <div className="dot"></div>

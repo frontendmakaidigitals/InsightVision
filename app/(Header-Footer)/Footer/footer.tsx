@@ -20,9 +20,9 @@ const Footer = () => {
     { title: "contact", link: "/Contact" },
   ];
   const legal = [
-    { title: "Privacy policy", link: "/" },
-    { title: "Terms & Conditions", link: "/" },
-    { title: "Cookie policy", link: "/" },
+    { title: "Privacy policy", link: "/Privacy-Policy" },
+    { title: "Terms & Conditions", link: "/TermsandConditions" },
+    { title: "Cookie policy", link: "/Cookie-Policy" },
   ];
   const socialIcons = [
     {
@@ -99,7 +99,7 @@ const Footer = () => {
                   className="font-Satoshi mb-1 text-sm lg:text-md text-indigo-200 flex items-start gap-1 "
                   key={index}
                 >
-                  {item.title}
+                  <Link href={item.link}>{item.title}</Link>
                 </motion.li>
               ))}
             </motion.ul>
@@ -108,7 +108,8 @@ const Footer = () => {
                 Address
               </motion.p>
               <p className="text-sm text-indigo-200 lg:text-md">
-                <span>Office</span> - 1701, Churchill Towers, Business Bay, Dubai, UAE
+                <span>Office</span> - 1701, Churchill Towers, Business Bay,
+                Dubai, UAE
               </p>
               <p className="mt-2 text-sm text-indigo-200 lg:text-md">
                 <span>Phone</span>- +971 50 865 4179
