@@ -7,7 +7,7 @@ export default function Page() {
       </p>
 
       <p className="mb-6">
-        This Cookie Policy explains how Insight Vision ("we", "us", or "our") uses cookies and similar technologies on our website.
+        This Cookie Policy explains how Insight Vision (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) uses cookies and similar technologies on our website.
       </p>
 
       <section className="mb-6">

@@ -10,8 +10,7 @@ import { MarqueeLogo } from "./App_Chunks/MarqueeLogo";
 import AboutUs from "./(Home-Page)/AboutUs";
 import Industries from "./(Home-Page)/Industries";
 import CTA from "./App_Chunks/CTA";
-import { Marquee } from "@/components/magicui/marquee";
-import { StarFour } from "@phosphor-icons/react";
+
 const Page = () => {
   const techTags = [
     "Website Developemnt",
