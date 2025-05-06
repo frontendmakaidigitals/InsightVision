@@ -2,8 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { X } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
+import SmallLoadingSpinner from "./spinner";
+import { cn } from "@/lib/utils";
+import { Checkbox } from "@/components/ui/Checkbox";
 interface SliderFormProps {
   isFormOpen: boolean;
   setIsFormOpen: (isFormOpen: boolean) => void;
@@ -13,21 +14,6 @@ const SliderForm: React.FC<SliderFormProps> = ({
   isFormOpen,
   setIsFormOpen,
 }) => {
-
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const form = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,70 +32,94 @@ const SliderForm: React.FC<SliderFormProps> = ({
     };
   }, [isFormOpen]);
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [checkbox, setCheckBox] = useState(false);
+
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+    checked: false,
+  });
+  const [status, setStatus] = useState("");
+
+  const validate = () => {
+    const tempErrors = {
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      message: "",
+      checked: false,
+    };
+    if (!formData.firstName.trim())
+      tempErrors.firstName = "First Name is required";
+    if (!formData.lastName.trim())
+      tempErrors.lastName = "Last Name is required";
+    if (!formData.phone.trim()) {
+      tempErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      tempErrors.phone = "Phone number must be 10 digits";
+    }
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Invalid email format";
+    }
+    if (!formData.message.trim()) tempErrors.message = "Message is required";
+    if (!checkbox) tempErrors.checked = true;
+    setErrors(tempErrors);
+    const hasErrors = Object.values(tempErrors).some(
+      (error) => error !== "" && error !== false
+    );
+    return !hasErrors;
+  };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const newErrors = { ...errors };
-
-    if (!formData.fullName) {
-      newErrors.fullName = "Full Name is required";
-      isValid = false;
-    }
-
-    if (!formData.phone) {
-      newErrors.phone = "Contact Number is required";
-      isValid = false;
-    }
-
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email address is invalid";
-      isValid = false;
-    }
-
-    if (!formData.message) {
-      newErrors.message = "Message is required";
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setStatus("");
+    if (!validate()) {
+      console.log("return", errors);
+      return;
+    }
+    setStatus("Sending...");
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
 
-    if (validateForm()) {
-      setIsSubmitting(true);
-
-      emailjs
-        .send(
-          "service_k34vn0n", // Replace with your EmailJS service ID
-          "template_0ao3rbn", // Replace with your EmailJS template ID
-          formData,
-          "dwtj2-cJpAOHH2pwy" // Replace with your EmailJS public key
-        )
-        .then(
-          () => {
-            setIsSubmitting(false);
-            setIsFormOpen(false);
-            alert("Message sent successfully!");
-          },
-          (err) => {
-            console.log("FAILED...", err);
-            setIsSubmitting(false);
-            alert("Failed to send the message, please try again.");
-          }
-        );
+      if (response.ok) {
+        setStatus("ok");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          message: "",
+        }); // Reset form
+        setCheckBox(false);
+      } else {
+        setStatus("Failed to send email.");
+      }
+    } catch (error) {
+      setStatus("Error sending email.");
     }
   };
 
@@ -144,7 +154,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
               <h2 className="text-4xl font-Synonym font-[500] ">
                 Have a Question?
               </h2>
-              <p className="font-SplineSans font-[300] mt-1 text-slate-800">
+              <p className="font-SplineSans font-[300] text-sm mt-1 text-slate-800">
                 Contact us today to see how we can help you find the right
                 solution for your financial needs.
               </p>
@@ -153,69 +163,105 @@ const SliderForm: React.FC<SliderFormProps> = ({
                 className="grid grid-cols-1 gap-4 mt-5"
                 onSubmit={handleSubmit}
               >
-                <div className="w-full">
-                  <label>Full Name</label>
-                  <input
-                    name="fullName"
-                    placeholder="Enter your full name"
-                    className="w-full font-[500] placeholder:text-slate-600 font-Grostek bg-slate-200 mt-1 rounded-xl px-5 py-3"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                  />
-                  {errors.fullName && (
-                    <p className="text-red-500 text-sm">{errors.fullName}</p>
-                  )}
+                <div className="w-full grid grid-cols-1 gap-4 lg:grid-cols-2 ">
+                  <div className="w-full">
+                    <label>First Name</label>
+                    <input
+                      name="firstName"
+                      placeholder="Enter your full name"
+                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.firstName ? 'border border-red-500' : ''} px-5 py-3`}
+                      value={formData.firstName}
+                      onChange={handleChange}
+                    />
+                   
+                  </div>
+                  <div className="w-full">
+                    <label>Last Name</label>
+                    <input
+                      name="lastName"
+                      placeholder="Enter your last name"
+                      className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.lastName ? 'border border-red-500' : ''} px-5 py-3`}
+                      value={formData.lastName}
+                      onChange={handleChange}
+                    />
+                    
+                  </div>
                 </div>
                 <div className="w-full">
-                  <label>Contact Number</label>
+                  <label>Phone</label>
                   <input
                     name="phone"
                     placeholder="Enter Contact number"
-                    className="w-full font-[500] placeholder:text-slate-600 font-Grostek bg-slate-200 mt-1 rounded-xl px-5 py-3"
+                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.phone ? 'border border-red-500' : ''} px-5 py-3`}
                     value={formData.phone}
                     onChange={handleChange}
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm">
-                      {errors.phone}
-                    </p>
-                  )}
+                  
                 </div>
                 <div className="w-full">
                   <label>Email</label>
                   <input
                     name="email"
                     placeholder="Enter your email"
-                    className="w-full font-[500] placeholder:text-slate-600 font-Grostek bg-slate-200 mt-1 rounded-xl px-5 py-3"
+                    className={`w-full font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 rounded-xl ${errors.email ? 'border border-red-500' : ''} px-5 py-3`}
                     value={formData.email}
                     onChange={handleChange}
                   />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email}</p>
-                  )}
+                
                 </div>
                 <div className="w-full">
                   <label>What service would you like help with?</label>
                   <textarea
                     name="message"
                     placeholder="Enter your message"
-                    className="w-full resize-none h-32 font-[500] placeholder:text-slate-600 font-Grostek bg-slate-200 mt-1 rounded-xl px-5 py-3"
+                    className={`w-full resize-none h-32 font-[500] placeholder:text-slate-500 font-Grostek bg-slate-100 mt-1 ${errors.message ? 'border border-red-500' : ''} rounded-xl px-5 py-3`}
                     value={formData.message}
                     onChange={handleChange}
                   />
-                  {errors.message && (
-                    <p className="text-red-500 text-sm">{errors.message}</p>
-                  )}
+                 
                 </div>
-                <div className="w-full flex justify-start">
-                  <button
-                    type="submit"
-                    className="px-5 py-2 bg-indigo-500 text-slate-50 rounded-full"
-                    disabled={isSubmitting}
+                <div className="flex items-center space-x-2 ">
+                  <Checkbox
+                    id="terms"
+                    checked={checkbox}
+                    onCheckedChange={() => {
+                      setErrors((prev) => ({
+                        ...prev, // Keep existing errors
+                        checked: false, // Update 'checked' error
+                      }));
+                      setCheckBox(!checkbox);
+                    }}
+                    className=""
+                  />
+                  <label
+                    htmlFor="terms"
+                    className={`${
+                      errors.checked ? "text-red-500" : ""
+                    } text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
                   >
-                    {isSubmitting ? "Submitting..." : "Submit"}
-                  </button>
+                    Accept terms and conditions
+                  </label>
                 </div>
+                <button
+                  type="submit"
+                  className={cn(
+                    `border border-slate-400 w-full transition-all duration-200 hover:bg-Palette-20 hover:text-indigo-50 cursor-pointer mt-3 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
+                    status === "ok" && "bg-Palette-20 text-indigo-200"
+                  )}
+                  disabled={status === "Sending..." || status === "ok"}
+                  onClick={handleSubmit}
+                >
+                  {status === "Sending..." ? (
+                    <>
+                      <SmallLoadingSpinner />
+                      Sending...
+                    </>
+                  ) : status === "ok" ? (
+                    "Submitted Sucessfully"
+                  ) : (
+                    "Submit"
+                  )}
+                </button>
               </form>
             </motion.div>
           </motion.div>
