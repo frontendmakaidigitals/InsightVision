@@ -30,8 +30,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Insigt Vision",
-  description: "Marketing agency company",
+  title: " Insight Vision | Result-Driven Marketing Agency in Dubai",
+  description:
+    "Elevate your brand with Insight Vision, a data-driven marketing agency specializing in SEO, PPC, social media, and content marketing. Get measurable results today!",
 };
 
 export default function RootLayout({
