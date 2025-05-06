@@ -16,7 +16,12 @@ export async function POST(req: Request): Promise<Response> {
       from: process.env.NEXT_PUBLIC_EMAIL_USER,
       to: process.env.NEXT_PUBLIC_EMAIL_TO,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-      text: `First Name: ${firstName}\nLast Name: ${lastName}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`,
+      text: `Enquiry received from Insight Vision Website Contact Form
+
+      Name: ${firstName} ${lastName}
+      Phone: ${phone}
+      Email: ${email}
+      Message: ${message}`,
     };
 
     await transporter.sendMail(mailOptions);
