@@ -8,7 +8,9 @@ export async function POST(req: Request): Promise<Response> {
     console.log("Request received with body:", body);
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: "frontendmakaidigitals@gmail.com",
         pass: "cndxfaineqdveczu", // <-- Make sure this is the correct app password, no spaces
