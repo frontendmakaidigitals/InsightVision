@@ -117,18 +117,18 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                 onClick={() => setServiceHoverActive(!serviceHoverActive)}
                 className={`pb-1 overflow-hidden group text-md relative `}
               >
-                  {(hoverIdx === idx || pathName === link.link) && (
-                    <motion.div
-                      initial={{
-                        width:
-                          pathName?.toLowerCase() === link.link ? "100%" : "0%",
-                      }}
-                      animate={{ width: "100%" }}
-                      exit={{ x: 100, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
-                    />
-                  )}
+                {(hoverIdx === idx || pathName === link.link) && (
+                  <motion.div
+                    initial={{
+                      width:
+                        pathName?.toLowerCase() === link.link ? "100%" : "0%",
+                    }}
+                    animate={{ width: "100%" }}
+                    exit={{ x: 100, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
+                  />
+                )}
                 <div className="inline-flex items-center">
                   {link.name.split("").map((char, index) => (
                     <motion.p key={index} className="inline-block">
@@ -160,66 +160,68 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
                   </motion.div>
                 </div>
               </motion.div>
-                {showPanel && (
+              {showPanel && (
+                <motion.div
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  className="absolute max-w-5xl z-50 top-full left-1/2 -translate-x-1/2 w-screen"
+                >
                   <motion.div
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className="absolute max-w-5xl z-50 top-full left-1/2 -translate-x-1/2 w-screen"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height, opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.165, 0.84, 0.44, 1],
+                    }}
+                    className="overflow-hidden bg-indigo-50 rounded-2xl mt-3 shadow-[0px_0px_5px_1.4px_rgba(0,_0,_0,_0.05)]"
                   >
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height, opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{
-                        duration: 0.4,
-                        ease: [0.165, 0.84, 0.44, 1],
-                      }}
-                      className="overflow-hidden bg-indigo-50 rounded-2xl mt-3 shadow-[0px_0px_5px_1.4px_rgba(0,_0,_0,_0.05)]"
+                    {/* Inner content measured for height */}
+                    <div
+                      ref={contentRef}
+                      className="p-4 grid grid-cols-[1.4fr_.6fr] gap-6"
                     >
-                      {/* Inner content measured for height */}
-                      <div
-                        ref={contentRef}
-                        className="p-4 grid grid-cols-[1.4fr_.6fr] gap-6"
-                      >
-                        <div className="grid h-full border-r pr-4 border-slate-300 grid-cols-2 gap-1">
-                          {menui.map((menu, menuId) => (
-                            <Link
-                              key={menuId}
-                              href={`/Service/${menu.link}`}
-                              className={`${
-                                menuId >= menui.length - 2 ? "" : ""
-                              } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-md`}
-                            >
-                              <motion.p className="">
-                                {menu.name}
-                                <motion.span className="text-sm block font-[500] text-slate-600">
-                                  {menu.desc}
-                                </motion.span>
-                              </motion.p>
+                      <div className="grid h-full border-r pr-4 border-slate-300 grid-cols-2 gap-1">
+                        {menui.map((menu, menuId) => (
+                          <Link
+                            key={menuId}
+                            href={`/Service/${menu.link}`}
+                            className={`${
+                              menuId >= menui.length - 2 ? "" : ""
+                            } hover:bg-indigo-100 group flex justify-between items-center font-DM-Sans px-5 py-2 rounded-2xl font-[600] text-md`}
+                          >
+                            <motion.p className="">
+                              {menu.name}
+                              <motion.span className="text-sm block font-[500] text-slate-600">
+                                {menu.desc}
+                              </motion.span>
+                            </motion.p>
 
-                              <div>
-                                <div className="hidden size-10 justify-center items-center group-hover:flex rounded-full bg-indigo-200">
-                                  <ArrowUpRight className="" />
-                                </div>
+                            <div>
+                              <div className="hidden size-10 justify-center items-center group-hover:flex rounded-full bg-indigo-200">
+                                <ArrowUpRight className="" />
                               </div>
-                            </Link>
-                          ))}
-                        </div>
-                        <div
-                          className={`w-full relative overflow-hidden  bg-indigo-300 rounded-xl h-[400px]`}
-                        >
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                      <div
+                        className={`w-full relative overflow-hidden  bg-indigo-300 rounded-xl h-[400px]`}
+                      >
+                        <Link href={'/Contact'}>
                           <button className="absolute text-slate-50 bg-Palette-30 cursor-pointer px-4 py-2 rounded-xl bottom-2 left-1/2 -translate-x-1/2">
                             Contact us
                           </button>
-                          <img
-                            src={"/Navbar.png"}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
+                        </Link>
+                        <img
+                          src={"/Navbar.png"}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                    </motion.div>
+                    </div>
                   </motion.div>
-                )}
+                </motion.div>
+              )}
             </div>
           ) : (
             <motion.div
@@ -232,18 +234,18 @@ const Menu: React.FC<LinkProps> = ({ links }) => {
               className={`pb-1 font-Plus-Jakarta-Sans font-[500] overflow-hidden text-md relative `}
             >
               <Link href={link.link}>
-                  {(hoverIdx === idx || pathName === link.link) && (
-                    <motion.div
-                      initial={{
-                        width:
-                          pathName?.toLowerCase() === link.link ? "100%" : "0%",
-                      }}
-                      animate={{ width: "100%" }}
-                      exit={{ x: 100, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
-                    />
-                  )}
+                {(hoverIdx === idx || pathName === link.link) && (
+                  <motion.div
+                    initial={{
+                      width:
+                        pathName?.toLowerCase() === link.link ? "100%" : "0%",
+                    }}
+                    animate={{ width: "100%" }}
+                    exit={{ x: 100, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="z-50 absolute top-[90%] bg-black left-0 h-[1px]"
+                  />
+                )}
                 {link.name.split("").map((char, index) => (
                   <motion.p key={index} className="inline-block">
                     {char === "-" ? (
