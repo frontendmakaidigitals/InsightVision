@@ -10,7 +10,7 @@ jobs:
     env:
       NEXT_PUBLIC_EMAIL_USER: ${{ secrets.NEXT_PUBLIC_EMAIL_USER }}
       NEXT_PUBLIC_EMAIL_PASS: ${{ secrets.NEXT_PUBLIC_EMAIL_PASS }}
-      NEXT_PUBLIC_EMAIL_TO: ${{ secrets.NEXT_PUBLIC_EMAIL_To }}
+      NEXT_PUBLIC_EMAIL_TO: ${{ secrets.NEXT_PUBLIC_EMAIL_TO }}
     steps:  
       - name: Checkout repo
         uses: actions/checkout@v3

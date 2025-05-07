@@ -61,7 +61,7 @@ const About = () => {
         </div>
         <div className="h-[300px] lg:h-[550px]">
           <img
-            src={"https://edirectsys.com/assets/homepage-assets/model-img.png"}
+            src={"/About/dora.png"}
             className="w-full h-full object-contain"
           />
         </div>
