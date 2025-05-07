@@ -72,8 +72,7 @@ const Page = () => {
     "4.mp4",
     "5.jpg",
     "6.mp4",
-    "8.mp4",
-    "9.jpg",
+
   ];
   const marketing = [
     "IKEA CO WORKER V2-compressed.mov",
