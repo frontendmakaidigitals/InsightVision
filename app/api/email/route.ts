@@ -9,8 +9,8 @@ export async function POST(req: Request) {
     console.log("Received data:", { firstName, lastName, phone, email, message });
     // Send the email using Resend
     const emailElement = await resend.emails.send({
-      from: 'frontendmakaidigitals@gmail.com', // your email
-      to: 'info@insightvision.marketing', // recipient email
+      from: 'onboarding@resend.dev', // your email
+      to: 'frontendmakaidigitals@gmail.com', // recipient email
       subject: `New Contact from ${firstName} ${lastName}`,
       text: `
         Name: ${firstName} ${lastName}
