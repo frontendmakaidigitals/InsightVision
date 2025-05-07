@@ -72,7 +72,6 @@ const Page = () => {
     "4.mp4",
     "5.jpg",
     "6.mp4",
-
   ];
   const marketing = [
     "IKEA CO WORKER V2-compressed.mov",
@@ -134,7 +133,6 @@ const Page = () => {
               style={{ marginTop: `${height + 50}px` }}
               className="container relative z-[99]"
             >
-             
               <div
                 style={{ height: `calc(100vh - ${height + 200}px)` }}
                 className="w-full flex flex-col  items-center text-slate-100 justify-center"
@@ -280,9 +278,11 @@ export default Page;
 const VideoPlayer = ({
   src,
   thumbnail,
+  id,
 }: {
   src: string;
   thumbnail: string;
+  id: number;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -320,7 +320,7 @@ const VideoPlayer = ({
   }, [isPlaying]);
 
   return (
-    <div className="h-[500px] w-full relative group rounded-md overflow-hidden">
+    <div className="h-[500px] w-full relative group overflow-hidden">
       {isPlaying ? (
         <>
           {isLoading == null && (
@@ -328,7 +328,6 @@ const VideoPlayer = ({
               <div className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin" />
             </div>
           )}
-          <motion.div className="flex">
             <video
               ref={videoRef}
               onPlaying={() => setIsLoading(false)}
@@ -336,12 +335,11 @@ const VideoPlayer = ({
               autoPlay
               muted
               controls={false}
-              className="w-full h-full object-cover"
+              className={`h-full w-full object-cover ${id === 10 ? " object-center" : ""}`}
             >
               <source src={src} />
               Your browser does not support the video tag.
             </video>
-          </motion.div>
         </>
       ) : (
         <img
@@ -404,7 +402,7 @@ const RenderMedia = (MediaArr: string[], path: string) => {
     "salwa_office_Video_Draft03-compressed.jpg",
     "starbucks misspelling-compressed.jpg",
   ];
-  console.log(thumbnails.length)
+
   const repoURL =
     "https://media.githubusercontent.com/media/frontendmakaidigitals/Interzens/refs/heads/main/public/";
 
@@ -436,6 +434,7 @@ const RenderMedia = (MediaArr: string[], path: string) => {
                   ? mediaBase
                   : mediaBase + ".jpg"
               }
+              id={idx}
             />
           );
         }
