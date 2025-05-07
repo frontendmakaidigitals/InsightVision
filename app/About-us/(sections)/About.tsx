@@ -61,7 +61,7 @@ const About = () => {
         </div>
         <div className="h-[300px] lg:h-[550px]">
           <img
-            src={"/About/dora.png"}
+            src={"about/dora.png"}
             className="w-full h-full object-contain"
           />
         </div>
