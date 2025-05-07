@@ -1,47 +1,31 @@
-export const runtime = "nodejs";
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-import nodemailer from "nodemailer";
+const resend = new Resend('re_6GLFhiTf_3javH3x77xZTr6qutop8Z1LS'); // Your Resend API key here
 
-export async function POST(req: Request): Promise<Response> {
+export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    console.log("Request received with body:", body);
-
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: "frontendmakaidigitals@gmail.com",
-        pass: "cndxfaineqdveczu", // <-- Make sure this is the correct app password, no spaces
-      },
-      tls: {
-        rejectUnauthorized: false, // <--- this line fixes the "self-signed certificate" error
-      },
+    const { firstName, lastName, phone, email, message } = await req.json();
+    console.log("Received data:", { firstName, lastName, phone, email, message });
+    // Send the email using Resend
+    const emailElement = await resend.emails.send({
+      from: 'frontendmakaidigitals@gmail.com', // your email
+      to: 'info@insightvision.marketing', // recipient email
+      subject: `New Contact from ${firstName} ${lastName}`,
+      text: `
+        Name: ${firstName} ${lastName}
+        Phone: ${phone}
+        Email: ${email}
+        Message: ${message}
+      `,
     });
 
-    console.log("Transporter created");
+    console.log('Email sent:', emailElement);
 
-    const mailOptions = {
-      from: "frontendmakaidigitals@gmail.com",
-      to: "info@insightvision.marketing",
-      subject: `Test Email`,
-      text: `This is a test email.`,
-    };
-
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent:", info);
-
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
-
-  } catch (error: any) {
-    console.error("ERROR:", error);
-    return new Response(JSON.stringify({ error: error.message || "Something went wrong" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Email send failed:", error);
+    const errorMessage = error instanceof Error ? error.message : "Something went wrong";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
