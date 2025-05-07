@@ -4,24 +4,24 @@ export default function WorkingProcess() {
       title: "Discover",
       description:
         " We dive deep to understand your brand, audience and goals.",
-      icon: "/about/customer-support.png",
+      icon: "about/customer-support.png",
     },
     {
       title: "Strategize",
       description: "We build a custom roadmap aligned with your objectives.",
-      icon: "/about/checklist.png",
+      icon: "about/checklist.png",
     },
     {
       title: "Execute",
       description:
         "We bring your strategy to life with creative precision.",
-      icon: "/about/calendar.png",
+      icon: "about/calendar.png",
     },
     {
       title: "Optimize & Scale",
       description:
         "We analyze, refine, and scale what works.",
-      icon: "/about/checked.png",
+      icon: "about/checked.png",
     },
   ];
 
