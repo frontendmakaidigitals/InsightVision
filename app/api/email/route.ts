@@ -7,14 +7,14 @@ export async function POST(req: Request): Promise<Response> {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "frontendmakaidigitals@gmail.com",
-        pass: "zcmj wxys vzkh hron",
+        user: process.env.NEXT_PUBLIC_EMAIL_USER,
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: "frontendmakaidigitals@gmail.com",
-      to: "info@insightvision.marketing",
+      from: process.env.NEXT_PUBLIC_EMAIL_USER,
+      to: process.env.NEXT_PUBLIC_EMAIL_TO,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       text: `Enquiry received from Insight Vision Website Contact Form
 
