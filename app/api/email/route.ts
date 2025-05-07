@@ -11,7 +11,7 @@ export async function POST(req: Request): Promise<Response> {
       service: "gmail",
       auth: {
         user: "frontendmakaidigitals@gmail.com",
-        pass: "zcmjwxysvzkhsdaf", // <-- Make sure this is the correct app password, no spaces
+        pass: "zcmjwxysvzkhhron", // <-- Make sure this is the correct app password, no spaces
       },
       tls: {
         rejectUnauthorized: false, // <--- this line fixes the "self-signed certificate" error
