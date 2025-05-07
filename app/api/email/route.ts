@@ -10,7 +10,7 @@ export async function POST(req: Request): Promise<Response> {
       service: "gmail",
       auth: {
         user: "frontendmakaidigitals@gmail.com",
-        pass: "zcmj wxys vzkh hron",
+        pass: "zcmjwxysvzkhhron",
       },
     });
 
