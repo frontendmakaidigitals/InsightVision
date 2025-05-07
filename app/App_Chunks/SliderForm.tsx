@@ -25,10 +25,12 @@ const SliderForm: React.FC<SliderFormProps> = ({
 
     if (isFormOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.body.style.overflow = "auto";
     };
   }, [isFormOpen]);
 
@@ -132,14 +134,14 @@ const SliderForm: React.FC<SliderFormProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ ease: [0.19, 1, 0.22, 1], duration: 0.7 }}
-            className="fixed z-[999999999999] flex px-2 justify-center lg:justify-end items-center top-0 left-0 w-screen h-screen bg-slate-950/30"
+            className="fixed z-[999999999999]  flex  p-4 justify-center lg:justify-end items-center top-0 left-0 w-screen h-dvh bg-slate-950/30"
           >
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: "0%" }}
               exit={{ x: "100%" }}
               transition={{ ease: [0.19, 1, 0.22, 1], duration: 0.7 }}
-              className="w-[500px] p-6 bg-white rounded-xl"
+              className="w-[500px] p-6 bg-white h-[99%] rounded-xl overflow-auto"
               ref={form}
             >
               <div className="flex justify-end text-slate-950">
@@ -151,7 +153,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
                 </button>
               </div>
 
-              <h2 className="text-4xl font-Synonym font-[500] ">
+              <h2 className="text-4xl mt-2 font-Synonym font-[500] ">
                 Have a Question?
               </h2>
               <p className="font-SplineSans font-[300] text-sm mt-1 text-slate-800">
