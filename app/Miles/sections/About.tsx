@@ -47,7 +47,7 @@ const About = () => {
           <p className="mt-7">
             MILES CRM is a powerful, user-friendly Customer Relationship
             Management platform designed specifically for businesses that demand
-            speed, efficiency, and growth. Whether you're a startup or an
+            speed, efficiency, and growth. Whether you&apos;re a startup or an
             established enterprise, MILES CRM helps streamline your sales,
             marketing, and service operations, making it the perfect CRM for
             businesses.
