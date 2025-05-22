@@ -5,8 +5,9 @@ import React, { useEffect, useRef, useState } from "react";
 type CTOProps = {
   heading: string;
   description: string;
+  button?:string
 };
-const CTO = ({ heading, description }: CTOProps) => {
+const CTO = ({ heading, description, button='Contact us' }: CTOProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [containerDimension, setContainerDimension] = useState({
     width: 0,
@@ -117,7 +118,7 @@ const CTO = ({ heading, description }: CTOProps) => {
             <div className="flex justify-end mt-5">
               <Link href="/Contact">
                 <button className="px-4 py-2 bg-violet-600 cursor-pointer text-slate-50 font-[600] font-Plus-Jakarta-Sans rounded-lg">
-                  Contact us
+                  {button}
                 </button>
               </Link>
             </div>
