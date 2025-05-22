@@ -1,8 +1,8 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React, { Suspense } from "react";
-import '@/app/style/DotsLoader.css'
+import React, { Suspense, useState, useEffect } from "react";
+import "@/app/style/DotsLoader.css";
 const Loading = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -14,18 +14,28 @@ const Loading = () => {
 export default Loading;
 
 const Loader = () => {
-  const [isLoading, setIsLoading] = React.useState(true);
-    const pathname = usePathname();
-    
-  React.useEffect(() => {
-    setIsLoading(true);
-  
-    const timeoutId = setTimeout(() => {
+  const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // If the document is already fully loaded (e.g., via soft navigation)
+    if (document.readyState === "complete") {
       setIsLoading(false);
-    }, 800);
-    return () => clearTimeout(timeoutId);
+      return;
+    }
+
+    // Otherwise, wait for the window "load" event
+    const handleLoad = () => {
+      setIsLoading(false);
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
   }, [pathname]);
- 
+
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
