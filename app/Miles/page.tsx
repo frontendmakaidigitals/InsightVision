@@ -13,7 +13,6 @@ const Page = () => {
       <Hero />
       <Partners />
       <About />
-
       <CRMInsights />
       <Productivity />
       <Tools />

@@ -43,7 +43,9 @@ const About = () => {
           </div>
         </div>
         <div className="">
-          <h2 className="text-2xl lg:text-5xl font-[500] text-[#310115]">What is MILES CRM?</h2>
+          <h2 className="text-4xl lg:text-5xl text-[#310115]">
+            What is MILES CRM?
+          </h2>
           <p className="mt-7">
             MILES CRM is a powerful, user-friendly Customer Relationship
             Management platform designed specifically for businesses that demand
@@ -52,7 +54,7 @@ const About = () => {
             marketing, and service operations, making it the perfect CRM for
             businesses.
           </p>
-          <div className="grid grid-cols-2 mt-12 gap-x-5">
+          <div className="grid grid-cols-1  lg:grid-cols-2 mt-12 gap-x-5">
             {benefits.map((benefit, idx) => (
               <p
                 key={idx}
@@ -65,7 +67,7 @@ const About = () => {
               </p>
             ))}
           </div>
-          <div className="grid grid-cols-2 mt-7 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-7 gap-5">
             {impactStats.map((stat, idx) => (
               <h3 key={idx} className="p-4 text-start bg-slate-200">
                 <span className="text-3xl block text-start font-[500]">

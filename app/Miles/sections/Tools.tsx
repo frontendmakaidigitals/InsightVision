@@ -53,7 +53,7 @@ const Tools = () => {
   return (
     <div className="bg-slate-950 py-14">
       <div className="container">
-        <h1 className="text-2xl lg:text-5xl font-[500] text-slate-50 text-center">
+        <h1 className="text-4xl lg:text-5xl text-slate-50 text-center">
           Features of MILES CRM
         </h1>
       </div>

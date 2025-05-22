@@ -163,7 +163,7 @@ const CRMInsights = () => {
   return (
     <div className="my-32">
       <div className="container ">
-        <h1 className="text-2xl lg:text-5xl font-[500] text-[#310115]">Heading</h1>
+        <h1 className="text-4xl lg:text-5xl text-[#310115]">Heading</h1>
 
         <div className=" mt-2">
           {sections.map((section, index) => (
@@ -171,8 +171,10 @@ const CRMInsights = () => {
               key={index}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${index !== sections.length - 1 ? " py-8 pb-4 border-b border-slate-900/10" : "py-8  "}`}
             >
-              <div className={`${index % 2 === 1 ? "order-1" : "order-2"}`}>
-                <h3 className="text-3xl max-w-sm text-pink-950 font-[500]">
+              <div
+                className={`${index % 2 === 1 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}
+              >
+                <h3 className="text-2xl lg:text-3xl max-w-sm text-pink-950 font-[500]">
                   {section.title}
                 </h3>
                 <p className="mt-4">
@@ -181,7 +183,7 @@ const CRMInsights = () => {
                   provident{" "}
                 </p>
 
-                <div className="grid grid-cols-2 mt-10 gap-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-2">
                   {section.features.map((feature, idx) => {
                     const Icon = feature.icon;
                     return (
@@ -195,7 +197,9 @@ const CRMInsights = () => {
                   })}
                 </div>
               </div>
-              <div className={`${index % 2 === 1 ? "order-2" : "order-1"}`}>
+              <div
+                className={`${index % 2 === 1 ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}
+              >
                 <div className="h-full overflow-hidden rounded-xl">
                   <img
                     src={`CRM/${section.img}`}

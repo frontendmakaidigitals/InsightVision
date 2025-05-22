@@ -60,7 +60,7 @@ const Industries = () => {
   return (
     <div className="my-24">
       <div className="container">
-        <h1 className="text-2xl lg:text-5xl text-[#310115] font-semibold mb-8">
+        <h1 className="text-4xl lg:text-5xl text-[#310115] font-[500] mb-8">
           Industries that use MILES CRM
         </h1>
 
@@ -69,7 +69,7 @@ const Industries = () => {
             <div
               key={idx}
               className={`h-[280px] relative overflow-hidden flex justify-start items-end p-5 rounded-xl ${
-                idx === 4 || idx === 5 ? "col-span-2" : ""
+                idx === 4 || idx === 5 ? "col-span-1 lg:col-span-2" : ""
               } bg-slate-300`}
             >
               <img

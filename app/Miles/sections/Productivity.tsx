@@ -8,7 +8,9 @@ export function Productivity() {
 
   return (
     <div className="w-full h-full pt-1 pb-24">
-      <h2 className="container text-2xl lg:text-5xl font-[500] text-[#310115]">Productivity Tools</h2>
+      <h2 className="container text-4xl lg:text-5xl font-[500] text-[#310115]">
+        Productivity Tools
+      </h2>
       <Carousel items={cards} />
     </div>
   );
