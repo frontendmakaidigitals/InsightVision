@@ -10,10 +10,10 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "About-us", link: "/About-us" },
     { name: "Services", link: "" },
-    { name: "Contact", link: "/Contact" },
     { name: "Portfolio", link: "/Portfolio" },
+    { name: "CRM", link: "/Miles" },
   ];
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className=" py-2 HeadNavigation">
       <div className="container justify-between flex items-center">
@@ -35,7 +35,7 @@ const Header = () => {
 
             {/* Button Layer */}
             <motion.button
-              onClick={() => router.push('/Contact') }
+              onClick={() => router.push("/Contact")}
               whileHover={{ scale: 1.05 }}
               className="relative z-10 w-full rounded-lg bg-black text-sm px-5 py-2 cursor-pointer text-slate-300 font-Plus-Jakarta-Sans font-semibold shadow-md"
             >

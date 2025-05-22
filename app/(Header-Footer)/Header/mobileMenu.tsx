@@ -89,8 +89,8 @@ const MobileMenu = ({}) => {
     { name: "Home", link: "/" },
     { name: "About-us", link: "/About-us" },
     { name: "Services", link: "", subMenu: true },
-    { name: "Contact", link: "/Contact" },
     { name: "Portfolio", link: "/Portfolio" },
+    { name: "CRM", link: "/Miles" },
   ];
   return (
     <div className="block lg:hidden">
