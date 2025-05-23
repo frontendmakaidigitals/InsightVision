@@ -6,6 +6,7 @@ import {
   Headset,
   SealPercent,
 } from "@phosphor-icons/react";
+import { motion } from "framer-motion";
 const groupedFeatures = [
   {
     category: "Marketing Tools",
@@ -17,6 +18,7 @@ const groupedFeatures = [
       { title: "Custom Reports" },
     ],
     icon: <ShoppingCartSimple size={32} color="#3b5bdb" />,
+    borderColor: "#9ED7FF",
   },
   {
     category: "Sales Tools",
@@ -28,6 +30,7 @@ const groupedFeatures = [
       { title: "One-Click Follow-Ups" },
     ],
     icon: <SealPercent size={32} color="#3b5bdb" />,
+    borderColor: "#00E7DB",
   },
   {
     category: "Support",
@@ -46,20 +49,32 @@ const groupedFeatures = [
       },
     ],
     icon: <Headset size={32} color="#3b5bdb" />,
+    borderColor: "#FF5D93",
   },
 ];
 
 const Tools = () => {
   return (
-    <div className="bg-slate-950 py-14">
-      <div className="container">
+    <div className="bg-[#0e0010] overflow-hidden py-14">
+      <div className="container ">
         <h1 className="text-4xl lg:text-5xl text-slate-50 text-center">
           Features of MILES CRM
         </h1>
       </div>
       <div className="grid grid-cols-1 mt-14 lg:grid-cols-3 gap-5 container">
         {groupedFeatures.map((group, index) => (
-          <div key={index} className="bg-purple-100 rounded-xl p-7">
+          <motion.div
+            initial={{ x: "100%" }}
+            whileInView={{ x: "0%" }}
+            transition={{
+              duration: 1,
+              delay: 0.03 * index,
+              ease: [0.19, 1, 0.22, 1],
+            }}
+            key={index}
+            className={`bg-purple-50 border-t-8 rounded-xl p-7`}
+            style={{ borderTopColor: group.borderColor }}
+          >
             <h2 className="text-2xl flex items-center gap-3 font-[600]">
               {group.icon} {group.category}
             </h2>
@@ -74,7 +89,7 @@ const Tools = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

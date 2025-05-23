@@ -42,39 +42,6 @@ const sections = [
         description:
           "Identify and focus on high-potential leads with smart scoring and ranking.",
       },
-      {
-        title: "Track & Reassign Inactive Leads",
-        icon: Repeat2,
-        description:
-          "Monitor cold leads and reassign them to boost conversions.",
-      },
-      {
-        title: "Centralized Lead Database",
-        icon: LayoutDashboard,
-        description:
-          "All lead info, history, and interactions in one accessible dashboard.",
-      },
-      {
-        title: "Follow-Up Reminders",
-        icon: AlarmClock,
-        description: "Timely alerts to follow up and never miss a meeting.",
-      },
-      {
-        title: "Faster Response Time",
-        icon: Zap,
-        description: "Respond instantly and close deals quicker.",
-      },
-      {
-        title: "Lead Source Tracking",
-        icon: Link,
-        description: "Track where your best leads are coming from.",
-      },
-      {
-        title: "Instant Alerts",
-        icon: BellRing,
-        description:
-          "Get notified for lead assignments, meetings, follow-ups, and churn activities.",
-      },
     ],
     img: "Leads.png",
   },
@@ -110,17 +77,6 @@ const sections = [
         icon: ClipboardList,
         description: "Transparent tracking of user actions for accountability.",
       },
-      {
-        title: "Performance Tracking",
-        icon: LineChart,
-        description: "Compare team and individual performance in real time.",
-      },
-      {
-        title: "Announcements",
-        icon: Megaphone,
-        description:
-          "Broadcast news, updates, and goals directly within the CRM.",
-      },
     ],
     img: "Team.png",
   },
@@ -149,11 +105,6 @@ const sections = [
         icon: ShieldCheck,
         description: "Access is limited based on user roles.",
       },
-      {
-        title: "Commission Workflow Automation",
-        icon: Zap,
-        description: "Auto-release commissions post-approval.",
-      },
     ],
     img: "Dashboard.png",
   },
@@ -161,35 +112,52 @@ const sections = [
 
 const CRMInsights = () => {
   return (
-    <div className="my-32">
-      <div className="container ">
-        <h1 className="text-4xl lg:text-5xl text-[#310115]">Heading</h1>
+    <div className={`pb-32 pt-20 relative`}>
+      <img
+        src={"CRM/Background.jpg"}
+        className="w-full h-full object-cover absolute inset-0"
+      />
+      <div
+        className="absolute inset-0 w-full h-full bg-gradient-to-b 
+          from-[#f1f0fb] from-[5%] 
+          via-transparent via-[95%] 
+          to-[#f1f0fb] to-[100%]"
+      />
+
+      <div className="container relative z-10">
+        <h1 className="text-4xl lg:text-5xl text-[#310115]">CRM Insights</h1>
 
         <div className=" mt-2">
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${index !== sections.length - 1 ? " py-8 pb-4 border-b border-slate-900/10" : "py-8  "}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${index !== sections.length - 1 ? " py-10 pb-10 border-b border-slate-900/30" : "py-10  "}`}
             >
               <div
                 className={`${index % 2 === 1 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}
               >
-                <h3 className="text-2xl lg:text-3xl max-w-sm text-pink-950 font-[500]">
+                <h3 className="text-2xl lg:text-4xl max-w-lg text-pink-950 font-[600] font-Plus-Jakarta-Sans">
+                  <span className="mr-3 text-5xl text-[#40012e] font-DM-Sans">0{index + 1}</span>
                   {section.title}
                 </h3>
-                <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                  atque quaerat dignissimos nobis id ullam. Iusto accusantium
-                  provident{" "}
+                <p className="mt-5">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dignissimos, quis modi dolorum, error laborum aliquid,
+                  consequuntur vel perferendis omnis possimus itaque quam?
+                  Consequuntur aut, et nobis cumque facere libero odio!
+                  <br /> Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit. Dignissimos, quis modi dolorum, error laborum aliquid,
+                  consequuntur vel perferendis omnis possimus itaque quam?
+                  Consequuntur aut, et nobis cumque facere libero odio!
                 </p>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-x-3">
                   {section.features.map((feature, idx) => {
                     const Icon = feature.icon;
                     return (
                       <h3
                         key={idx}
-                        className="mb-5 text-indigo-950 bg-white p-3 rounded-lg flex gap-3 items-start"
+                        className="mb-3 text-indigo-950 bg-white  hover:bg-slate-500 hover:text-slate-50 transition-all duration-200 p-3 rounded-lg flex gap-3 items-start"
                       >
                         <Icon className="" size={"24"} /> {feature.title}
                       </h3>

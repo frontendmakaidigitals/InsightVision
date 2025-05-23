@@ -146,7 +146,7 @@ const SliderForm: React.FC<SliderFormProps> = ({
             >
               <div className="flex justify-end text-slate-950">
                 <button
-                  className="flex px-4 py-2 transition-colors duration-300 hover:bg-red-300 rounded-full items-center gap-2"
+                  className="flex px-4 py-2 transition-colors cursor-pointer duration-300 hover:bg-red-500 hover:text-red-50 rounded-full items-center gap-2"
                   onClick={() => setIsFormOpen(false)}
                 >
                   Close <X />

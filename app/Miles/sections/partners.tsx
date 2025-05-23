@@ -10,14 +10,14 @@ const Partners = () => {
   ];
   return (
     <div className="my-20">
-      <div className="container flex items-center gap-5 bg-gray-200 rounded-xl p-7">
-        <h2 className="text-2xl text-slate-500">Our Supported Partners</h2>
+      <div className="flex items-center gap-5 bg-[#cfd1ef] p-7">
+      
 
         <div className="grid grid-cols-5 gap-5 flex-1">
           {images.map((image, index) => (
-            <div key={index} className=" rounded-xl p-5">
-              <div className="w-full h-14 flex justify-center items-center">
-                <img className="opacity-[.7]" src={`Partner-Logo/${image}`} />
+            <div key={index} className=" rounded-xl p-3">
+              <div className="w-full h-10 flex justify-center items-center">
+                <img className="opacity-[1] w-full h-full object-contain" src={`Partner-Logo/${image}`} />
               </div>
             </div>
           ))}

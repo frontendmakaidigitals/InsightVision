@@ -1,51 +1,42 @@
 "use client";
 import React, { useState } from "react";
 import SliderForm from "@/app/App_Chunks/SliderForm";
-import { PlugsConnected } from "@phosphor-icons/react";
+
 const Hero = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <div>
       <SliderForm isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
-      <div className="container my-14 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 ">
-        <div className="">
-          <div className="border px-4 py-1 rounded-full border-Palette-30 w-fit flex gap-3 items-center ">
-            <div className="bg-indigo-200 rounded-full p-2">
-              <PlugsConnected weight="fill" size={"15"} />
-            </div>
-            <p>Seamless Integration</p>
-          </div>
-
-          <h1 className="text-4xl lg:text-7xl mt-10 text-indigo-950 ">
-            Boost Efficiency, Automate Workflows, and Drive Growth
+      <div className="container my-14 grid grid-cols-1  gap-10 ">
+        <div className="flex flex-col items-center justify-center">
+          <img src={"Logo/miles-logo.svg"} alt="miles" className="w-36" />
+          <p className="mt-3 text-sm text-center  ">
+            #1 CRM Software Built for Growth-Driven Teams
+          </p>
+          <h1 className="text-4xl mt-1 text-center max-w-2xl font-[500]  lg:text-7xl  text-indigo-950 ">
+            Where Every{" "}
+            <span className=" bg-gradient-to-t from-indigo-600 to-indigo-50  text-purple-50  rounded-xl px-4">
+              Lead
+            </span>{" "}
+            Turns Into Success..
           </h1>
 
-          <p className="mt-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem culpa
-            similique doloribus, soluta suscipit quae quo tempora aperiam
-            adipisci at repudiandae sit odio velit dolores cupiditate corporis
-            deleniti, tempore sapiente.
-          </p>
           <button
             onClick={() => setIsFormOpen(true)}
-            className="mt-10 bg-slate-300 hover:bg-slate-200 cursor-pointer px-6 rounded-md py-2"
+            className="mt-7 bg-indigo-500 text-slate-50 hover:bg-indigo-500/90 cursor-pointer px-6 rounded-md py-2"
           >
-            Get Started
+            Book a free call
           </button>
         </div>
 
         {/* Hero Image */}
 
-        <div>
-          <div className="h-[350px] lg:h-[600px] overflow-hidden w-full  rounded-xl">
-            <img
-              className="h-full w-full object-cover rounded-xl"
-              src={
-                "https://images.unsplash.com/photo-1686749115547-897913fe1b61?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
-              alt="hero"
-            />
+        <div className="relative w-full">
+          <div className="h-[350px] lg:h-[600px] overflow-hidden w-full rounded-xl relative z-0">
+            <video autoPlay muted>
+              <source src="https://www.zohowebstatic.com/sites/zweb/images/crm/crm-for-everyone-home-video.mp4" />
+            </video>
           </div>
         </div>
       </div>

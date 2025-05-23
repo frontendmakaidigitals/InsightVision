@@ -18,7 +18,8 @@ const Loader = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    // If the document is already fully loaded (e.g., via soft navigation)
+    setIsLoading(true);
+ 
     if (document.readyState === "complete") {
       setIsLoading(false);
       return;
