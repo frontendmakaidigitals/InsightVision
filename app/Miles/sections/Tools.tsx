@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   SealCheck,
   ShoppingCartSimple,
@@ -55,13 +56,13 @@ const groupedFeatures = [
 
 const Tools = () => {
   return (
-    <div className="bg-[#0e0010] overflow-hidden py-14">
+    <div className="bg-[#0e0010] overflow-hidden py-24">
       <div className="container ">
         <h1 className="text-4xl lg:text-5xl text-slate-50 text-center">
           Features of MILES CRM
         </h1>
       </div>
-      <div className="grid grid-cols-1 mt-14 lg:grid-cols-3 gap-5 container">
+      <div className="grid grid-cols-1 mt-20 lg:grid-cols-3 gap-5 container">
         {groupedFeatures.map((group, index) => (
           <motion.div
             initial={{ x: "100%" }}
@@ -71,24 +72,39 @@ const Tools = () => {
               delay: 0.03 * index,
               ease: [0.19, 1, 0.22, 1],
             }}
+            viewport={{ once: true }}
             key={index}
-            className={`bg-purple-50 border-t-8 rounded-xl p-7`}
+            className={`bg-purple-50 border-t-8 rounded-xl p-7 flex flex-col justify-between items-start `}
             style={{ borderTopColor: group.borderColor }}
           >
-            <h2 className="text-2xl flex items-center gap-3 font-[600]">
-              {group.icon} {group.category}
-            </h2>
-            <div className="mt-8 ml-2">
-              {group.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex text-lg items-center gap-2 mb-4"
-                >
-                  <SealCheck size={20} color="green" weight="fill" />
-                  <p>{feature.title}</p>
+            <div>
+              <div className="bg-indigo-100 w-fit p-2 rounded-xl">
+                {group.icon}
+              </div>
+              <div>
+                <h2 className="text-2xl flex items-center gap-3 font-[600] mt-6">
+                  {group.category}
+                </h2>
+                <div className="mt-5 ">
+                  {group.features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="flex text-lg items-start gap-2 mb-4"
+                    >
+                      <div className="mt-[4px]">
+                        <SealCheck size={20} color="green" weight="fill" />
+                      </div>
+                      <p>{feature.title}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
+            <Link href="/Contact" className="mt-5">
+              <button className=" bg-Palette-10 text-white px-4 py-[.65rem]  rounded-xl">
+                Get a free trial
+              </button>
+            </Link>
           </motion.div>
         ))}
       </div>

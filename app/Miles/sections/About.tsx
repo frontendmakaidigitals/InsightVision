@@ -69,7 +69,7 @@ const About = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 mt-7 gap-5">
             {impactStats.map((stat, idx) => (
-              <h3 key={idx} className="p-4 text-start bg-slate-200">
+              <h3 key={idx} className="p-4 text-start bg-slate-200 rounded-lg">
                 <span className="text-3xl block text-start font-[500]">
                   {stat.stat}
                 </span>
