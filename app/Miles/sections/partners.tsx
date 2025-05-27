@@ -10,7 +10,7 @@ const Partners = () => {
   ];
   return (
     <div className="my-20">
-      <div className="flex items-center gap-5 bg-[#cfd1ef] p-7">
+      <div className="flex items-center gap-5 bg-slate-300 p-7">
       
 
         <div className="grid grid-cols-5 gap-5 flex-1">

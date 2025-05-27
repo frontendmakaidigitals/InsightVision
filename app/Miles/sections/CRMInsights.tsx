@@ -44,6 +44,7 @@ const sections = [
       },
     ],
     img: "Leads.png",
+    desc: "MILES CRM’s Smart Lead Management helps you turn more leads into customers faster and easier. It automatically collects leads from platforms, so you don`t have to do it manually. Leads are quickly assigned to the right team members, and the system highlights the most promising ones using smart scoring. If any lead goes cold, MILES tracks it and helps you follow up or reassign it to keep things moving. All your lead info is stored in one easy-to-use dashboard. \n You`ll get instant alerts for new leads, follow-ups, and meetings—so you never miss a chance to close a deal. With built-in lead source tracking and faster response times, MILES CRM helps you grow your sales and make better decisions.",
   },
   {
     title: "Team Collaboration & Hierarchy",
@@ -79,6 +80,7 @@ const sections = [
       },
     ],
     img: "Team.png",
+    desc: "MILES CRM’s Team Collaboration & Hierarchy helps your team work better together. You can easily set up who reports to whom, organize departments, and give each person the right level of access based on their role. Managers and agents get their own dashboards to see what matters most to them. Team members can share notes, assign tasks, and update each other directly in the CRM, so everything stays in one place. \n You can track what each user is doing, see how the team is performing, and send out announcements or updates to everyone. With MILES CRM, your team stays organized, connected, and focused on results.",
   },
   {
     title: "MIS – Deal Closure & Commission Management",
@@ -107,6 +109,7 @@ const sections = [
       },
     ],
     img: "Dashboard.png",
+    desc: "MILES CRM’s Deal Closure & Commission Management makes it easy to track every step of the sales process—from deal creation to final commission payout. You can monitor deal progress, manage approvals for primary and secondary deals, and keep everything secure with role-based access. The system also lets you collect and verify all customer KYC documents in one place. \n With automated commission workflows, commissions are released quickly after approvals, saving time and reducing errors. MILES CRM helps you close deals faster, stay compliant, and manage commissions smoothly—all in one easy-to-use platform.",
   },
 ];
 
@@ -137,21 +140,14 @@ const CRMInsights = () => {
                 className={`${index % 2 === 1 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}
               >
                 <h3 className="text-2xl lg:text-4xl max-w-lg text-pink-950 font-[600] font-Plus-Jakarta-Sans">
-                  <span className="mr-3 text-5xl text-[#40012e] font-DM-Sans">0{index + 1}</span>
+                  <span className="mr-3 text-5xl text-[#40012e] font-DM-Sans">
+                    0{index + 1}
+                  </span>
                   {section.title}
                 </h3>
-                <p className="mt-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dignissimos, quis modi dolorum, error laborum aliquid,
-                  consequuntur vel perferendis omnis possimus itaque quam?
-                  Consequuntur aut, et nobis cumque facere libero odio!
-                  <br /> Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Dignissimos, quis modi dolorum, error laborum aliquid,
-                  consequuntur vel perferendis omnis possimus itaque quam?
-                  Consequuntur aut, et nobis cumque facere libero odio!
-                </p>
+                <p className="mt-5">{section.desc}</p>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-x-3">
+                <div className="grid grid-cols-1 lg:grid-cols-2 mt-5 gap-x-3">
                   {section.features.map((feature, idx) => {
                     const Icon = feature.icon;
                     return (
