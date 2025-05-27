@@ -134,7 +134,7 @@ const CRMInsights = () => {
           {sections.map((section, index) => (
             <div
               key={index}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${index !== sections.length - 1 ? " py-10 pb-10 border-b border-slate-900/30" : "py-10  "}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-4 ${index !== sections.length - 1 ? " py-10 pb-10 border-b border-slate-900/30" : "py-10  "}`}
             >
               <div
                 className={`${index % 2 === 1 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}
@@ -164,7 +164,7 @@ const CRMInsights = () => {
               <div
                 className={`${index % 2 === 1 ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}
               >
-                <div className="h-full overflow-hidden rounded-xl">
+                <div className=" h-full rounded-xl overflow-hidden">
                   <img
                     src={`CRM/${section.img}`}
                     className="w-full h-full object-contain"
