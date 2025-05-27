@@ -56,7 +56,7 @@ const groupedFeatures = [
 
 const Tools = () => {
   return (
-    <div className="bg-[#0e0010] overflow-hidden py-24">
+    <div className="bg-[#655e67] overflow-hidden py-24">
       <div className="container ">
         <h1 className="text-4xl lg:text-5xl text-slate-50 text-center">
           Features of MILES CRM
