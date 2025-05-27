@@ -34,9 +34,7 @@ const Hero = () => {
 
         <div className="relative w-full">
           <div className="h-[350px] lg:h-[600px] overflow-hidden w-full rounded-xl relative z-0">
-            <video autoPlay muted>
-              <source src="https://www.zohowebstatic.com/sites/zweb/images/crm/crm-for-everyone-home-video.mp4" />
-            </video>
+            <img src={`CRM/heroBg.png`} />
           </div>
         </div>
       </div>
