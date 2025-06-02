@@ -33,7 +33,7 @@ const Hero = () => {
         {/* Hero Image */}
 
         <div className="relative w-full">
-          <div className="h-[350px] lg:h-[600px] overflow-hidden w-full rounded-xl relative z-0">
+          <div className="h-auto  lg:h-[600px] overflow-hidden w-full rounded-xl relative z-0">
             <img src={`CRM/heroBg.png`} />
           </div>
         </div>
