@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     name: Build and Deploy to Production
@@ -11,7 +12,8 @@ jobs:
       NEXT_PUBLIC_EMAIL_USER: ${{ secrets.NEXT_PUBLIC_EMAIL_USER }}
       NEXT_PUBLIC_EMAIL_PASS: ${{ secrets.NEXT_PUBLIC_EMAIL_PASS }}
       NEXT_PUBLIC_EMAIL_TO: ${{ secrets.NEXT_PUBLIC_EMAIL_TO }}
-    steps:  
+
+    steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -46,12 +48,12 @@ jobs:
       - name: Upload project files via rsync
         run: |
           rsync -avz --delete --exclude '.git' --exclude 'node_modules' \
-            -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
+            -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
             ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/insightvision/
 
       - name: Deploy and run with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+          ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             cd ~/insightvision &&
             
             # Stop and delete existing PM2 process if it exists
