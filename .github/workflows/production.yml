@@ -44,6 +44,15 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          # Add custom SSH config to ensure port is used
+          cat >> ~/.ssh/config <<EOF
+          Host deploy-server
+            HostName ${{ secrets.SSH_HOST }}
+            User ${{ secrets.SSH_USER }}
+            Port ${{ secrets.SSH_PORT }}
+            IdentityFile ~/.ssh/id_rsa
+            StrictHostKeyChecking no
+          EOF
 
       - name: Upload project files via rsync
         run: |
@@ -53,7 +62,7 @@ jobs:
 
       - name: Deploy and run with PM2
         run: |
-          ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+          ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'ENDSSH'
             cd ~/insightvision &&
             
             # Stop and delete existing PM2 process if it exists
@@ -61,8 +70,8 @@ jobs:
             
             # Check if port 3002 is in use and kill the process
             PORT=3002
-            PID=\$(lsof -t -i:\$PORT) || true
-            [ ! -z \"\$PID\" ] && kill -9 \$PID || true
+            PID=$(lsof -t -i:$PORT 2>/dev/null) || true
+            [ ! -z "$PID" ] && kill -9 $PID || true
             
             # Install dependencies
             npm ci --omit=dev &&
@@ -78,4 +87,4 @@ jobs:
             # Verify app is running
             sleep 5
             pm2 list | grep -q 'insightvision.*online' && echo 'App started successfully' || (pm2 logs insightvision --lines 50 && exit 1)
-          "
+          ENDSSH
