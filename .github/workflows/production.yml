@@ -39,12 +39,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Set up SSH key
+      - name: Set up SSH key and config
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          # Add custom SSH config to ensure port is used
+          # Create SSH config for easier connection
           cat >> ~/.ssh/config <<EOF
           Host deploy-server
             HostName ${{ secrets.SSH_HOST }}
@@ -53,16 +53,19 @@ jobs:
             IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
           EOF
+          chmod 600 ~/.ssh/config
 
       - name: Upload project files via rsync
         run: |
-          rsync -avz --delete --exclude '.git' --exclude 'node_modules' \
-            -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/insightvision/
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            -e "ssh" \
+            ./ deploy-server:~/insightvision/
 
       - name: Deploy and run with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'ENDSSH'
+          ssh deploy-server << 'ENDSSH'
             cd ~/insightvision &&
             
             # Stop and delete existing PM2 process if it exists
