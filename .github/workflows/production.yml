@@ -39,55 +39,120 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Set up SSH key and config
+      - name: Create deployment package
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          # Create SSH config for easier connection
-          cat >> ~/.ssh/config <<EOF
-          Host deploy-server
-            HostName ${{ secrets.SSH_HOST }}
-            User ${{ secrets.SSH_USER }}
-            Port ${{ secrets.SSH_PORT }}
-            IdentityFile ~/.ssh/id_rsa
-            StrictHostKeyChecking no
-          EOF
-          chmod 600 ~/.ssh/config
+          mkdir -p deploy
+          cp -r .next deploy/
+          cp -r public deploy/ 2>/dev/null || true
+          cp package.json package-lock.json deploy/
+          cp next.config.* deploy/ 2>/dev/null || true
+          cp -r app deploy/ 2>/dev/null || true
+          cp -r components deploy/ 2>/dev/null || true
+          cp -r lib deploy/ 2>/dev/null || true
+          cp -r config deploy/ 2>/dev/null || true
+          cp -r hooks deploy/ 2>/dev/null || true
+          cp -r styles deploy/ 2>/dev/null || true
+          cp -r types deploy/ 2>/dev/null || true
+          cp -r utils deploy/ 2>/dev/null || true
+          cp tailwind.config.* deploy/ 2>/dev/null || true
+          cp postcss.config.* deploy/ 2>/dev/null || true
+          cp tsconfig.json deploy/ 2>/dev/null || true
+          cd deploy && tar -czf ../insightvision-deploy.tar.gz .
 
-      - name: Upload project files via rsync
-        run: |
-          rsync -avz --delete \
-            --exclude '.git' \
-            --exclude 'node_modules' \
-            -e "ssh" \
-            ./ deploy-server:~/insightvision/
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: insightvision-build
+          path: insightvision-deploy.tar.gz
 
-      - name: Deploy and run with PM2
-        run: |
-          ssh deploy-server << 'ENDSSH'
-            cd ~/insightvision &&
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            # Create backup
+            cd /home/${{ secrets.SSH_USER }}/insightvision
+            if [ -d ".next" ]; then
+              cp -r .next .next.backup.$(date +%Y%m%d_%H%M%S)
+            fi
             
-            # Stop and delete existing PM2 process if it exists
-            pm2 delete insightvision || true
+            # Initialize git repository if needed and pull latest code
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+            fi
+            git fetch origin
+            git reset --hard origin/main
+            
+            # Install production dependencies
+            npm ci --omit=dev
+            npm i sharp
+            
+            # Build application
+            npm run build
             
             # Check if port 3002 is in use and kill the process
             PORT=3002
             PID=$(lsof -t -i:$PORT 2>/dev/null) || true
             [ ! -z "$PID" ] && kill -9 $PID || true
             
-            # Install dependencies
-            npm ci --omit=dev &&
-            npm i sharp &&
+            # Restart PM2 process
+            pm2 delete insightvision || true
+            PORT=3002 pm2 start npm --name "insightvision" -- start
             
-            # Start the application with PM2
-            PORT=3002 pm2 start npm --name insightvision -- start
-            
-            # Enable timestamp logging and save the PM2 process
-            pm2 save
+            # Enable timestamp logging and save
             pm2 set pm2:logs:timestamp true
+            pm2 save
             
-            # Verify app is running
-            sleep 5
-            pm2 list | grep -q 'insightvision.*online' && echo 'App started successfully' || (pm2 logs insightvision --lines 50 && exit 1)
-          ENDSSH
+            # Wait for app to start
+            sleep 10
+
+      - name: Health check
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            # Check if the application is responding
+            for i in {1..5}; do
+              if curl -f http://localhost:3002 > /dev/null 2>&1; then
+                echo "✅ Application is healthy"
+                pm2 list
+                exit 0
+              fi
+              echo "⏳ Attempt $i: Waiting for application..."
+              sleep 10
+            done
+            echo "❌ Application health check failed"
+            pm2 logs insightvision --lines 50
+            exit 1
+
+      - name: Rollback on failure
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "🔄 Deployment failed, attempting rollback..."
+            cd /home/${{ secrets.SSH_USER }}/insightvision
+            
+            # Find latest backup
+            BACKUP=$(ls -t .next.backup.* 2>/dev/null | head -n1)
+            if [ -n "$BACKUP" ]; then
+              echo "📦 Restoring from backup: $BACKUP"
+              rm -rf .next
+              mv "$BACKUP" .next
+              pm2 restart insightvision
+              echo "✅ Rollback completed"
+            else
+              echo "❌ No backup found for rollback"
+              pm2 restart insightvision
+            fi
