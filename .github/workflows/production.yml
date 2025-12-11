@@ -39,6 +39,15 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Debug SSH Configuration
+        run: |
+          echo "SSH Host: ${{ secrets.SSH_HOST }}"
+          echo "SSH User: ${{ secrets.SSH_USER }}"
+          echo "SSH Port: ${{ secrets.SSH_PORT }}"
+          echo "Port length: ${#SSH_PORT}"
+        env:
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+
       - name: Create deployment package
         run: |
           mkdir -p deploy
@@ -66,12 +75,13 @@ jobs:
           path: insightvision-deploy.tar.gz
 
       - name: Deploy to server
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          debug: true
           script: |
             # Create backup
             cd /home/${{ secrets.SSH_USER }}/insightvision
@@ -111,7 +121,7 @@ jobs:
             sleep 10
 
       - name: Health check
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
@@ -134,7 +144,7 @@ jobs:
 
       - name: Rollback on failure
         if: failure()
-        uses: appleboy/ssh-action@v1.0.0
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
