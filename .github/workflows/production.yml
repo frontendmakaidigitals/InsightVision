@@ -39,15 +39,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Debug SSH Configuration
-        run: |
-          echo "SSH Host: ${{ secrets.SSH_HOST }}"
-          echo "SSH User: ${{ secrets.SSH_USER }}"
-          echo "SSH Port: ${{ secrets.SSH_PORT }}"
-          echo "Port length: ${#SSH_PORT}"
-        env:
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-
       - name: Create deployment package
         run: |
           mkdir -p deploy
@@ -74,51 +65,72 @@ jobs:
           name: insightvision-build
           path: insightvision-deploy.tar.gz
 
-      - name: Deploy to server
+      - name: Copy build to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "insightvision-deploy.tar.gz"
+          target: "/home/${{ secrets.SSH_USER }}/"
+
+      - name: Deploy and restart
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          debug: true
           script: |
-            # Create backup
+            # Navigate to app directory
             cd /home/${{ secrets.SSH_USER }}/insightvision
+            
+            # Create backup of existing .next
             if [ -d ".next" ]; then
-              cp -r .next .next.backup.$(date +%Y%m%d_%H%M%S)
+              mv .next .next.backup.$(date +%Y%m%d_%H%M%S)
             fi
             
-            # Initialize git repository if needed and pull latest code
-            if [ ! -d .git ]; then
-              git init
-              git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+            # Extract the deployment package
+            tar -xzf /home/${{ secrets.SSH_USER }}/insightvision-deploy.tar.gz -C .
+            
+            # Verify package.json exists
+            if [ ! -f "package.json" ]; then
+              echo "❌ Error: package.json not found after extraction"
+              ls -la
+              exit 1
             fi
-            git fetch origin
-            git reset --hard origin/main
             
             # Install production dependencies
             npm ci --omit=dev
-            npm i sharp
             
-            # Build application
-            npm run build
+            # Verify .next directory exists
+            if [ ! -d ".next" ]; then
+              echo "❌ Error: .next directory not found"
+              exit 1
+            fi
             
-            # Check if port 3002 is in use and kill the process
+            # Kill process on port 3002
             PORT=3002
             PID=$(lsof -t -i:$PORT 2>/dev/null) || true
-            [ ! -z "$PID" ] && kill -9 $PID || true
+            if [ ! -z "$PID" ]; then
+              echo "Killing process on port $PORT (PID: $PID)"
+              kill -9 $PID
+            fi
             
-            # Restart PM2 process
+            # Restart with PM2
             pm2 delete insightvision || true
             PORT=3002 pm2 start npm --name "insightvision" -- start
-            
-            # Enable timestamp logging and save
-            pm2 set pm2:logs:timestamp true
             pm2 save
             
-            # Wait for app to start
+            # Cleanup
+            rm -f /home/${{ secrets.SSH_USER }}/insightvision-deploy.tar.gz
+            
+            # Wait for application to start
             sleep 10
+            
+            echo "✅ Deployment completed"
+            pm2 list
 
       - name: Health check
         uses: appleboy/ssh-action@v1.2.0
